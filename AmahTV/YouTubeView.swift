@@ -46,6 +46,7 @@ struct YouTubeView: View {
         youTubePlayer
       )
     }
+    .statusBar(hidden: true)
   }
 }
 
