@@ -14,43 +14,17 @@ struct YouTubeView: View {
   private var youTubePlayer = YouTubePlayer()
 
   var body: some View {
-    NavigationView {
-      ChannelsView(channels:channels, youTubePlayer:youTubePlayer)
-      Text("Swipe from left for channels")
-    }.navigationTitle("Amah TV")
-  }
-}
-
-struct ChannelsView: View {
-  public let channels: [Channel]
-  @ObservedObject
-  public var youTubePlayer: YouTubePlayer
-  var body: some View {
-    List(channels, id:\.name) {channel in
-      NavigationLink(destination:
-                      YTView(url:channel.url, youTubePlayer:youTubePlayer)
-                      .navigationTitle(Text(channel.name))
-      ) {
-        Text(channel.name)
+    HStack {
+      List(channels, id:\.name) {channel in
+        Button(channel.name) {
+          youTubePlayer.source = .url(channel.url.absoluteString)
+        }
       }
+      .frame(maxWidth:200)
+      YouTubePlayerView(
+        youTubePlayer
+      )
     }
-  }
-}
-
-struct YTView: View {
-  var url: URL
-  @ObservedObject
-  public var youTubePlayer: YouTubePlayer
-  var body: some View {
-    YouTubePlayerView(
-      youTubePlayer
-    )
-      .onAppear {
-          youTubePlayer.source = .url(url.absoluteString)
-      }
-      .onDisappear {
-        youTubePlayer.stop()
-      }
   }
 }
 
