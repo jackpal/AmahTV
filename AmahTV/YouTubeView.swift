@@ -22,31 +22,39 @@ struct YouTubeView: View {
       language: "zh-Hant",
       showAnnotations: false,
       useModestBranding: true
-      )
+    )
   )
 
   var body: some View {
-    HStack {
-      List(channels, id:\.name) {channel in
-        Button(action: {
-          youTubePlayer.source = .url(channel.url.absoluteString)
-          selectedChannel = channel
-        }) {
-          HStack {
-            Text(channel.name)
-            Spacer()
-            if channel == selectedChannel {
-              Image(systemName: "play.fill")
+    VStack{
+      HStack {
+        ForEach(channels, id:\.name) {channel in
+          Button(action: {
+            choose(channel:channel)
+          }) {
+            HStack {
+              if channel == selectedChannel {
+                Image(systemName: "play.fill")
+              }
+              Text(channel.name)
             }
           }
+          .padding()
         }
       }
-      .frame(maxWidth:200)
       YouTubePlayerView(
         youTubePlayer
       )
     }
     .statusBar(hidden: true)
+    .onAppear {
+      choose(channel:channels[1])
+    }
+  }
+
+  private func choose(channel:Channel) {
+    youTubePlayer.source = .url(channel.url.absoluteString)
+    selectedChannel = channel
   }
 }
 
