@@ -12,10 +12,10 @@ struct YouTubeView: View {
   private let channels: [Channel]
   @State
   private var selectedChannel: Channel
-  
+
   @StateObject
   private var youTubePlayer: YouTubePlayer
-  
+
   init(channels: [Channel], initialSelectedChannelIndex: Int) {
     self.channels = channels
     let selectedChannel = channels[initialSelectedChannelIndex]
@@ -36,7 +36,7 @@ struct YouTubeView: View {
         )
     )
   }
-  
+
   var body: some View {
     VStack {
       Picker(selection: $selectedChannel, label: Text("Channel")) {
@@ -46,15 +46,13 @@ struct YouTubeView: View {
         }
       }
       .pickerStyle(SegmentedPickerStyle())
-      .background(Color.black)
       .onChange(of:selectedChannel) { newValue in
         youTubePlayer.source = .url(newValue.url.absoluteString)
       }
-      
+
       YouTubePlayerView(
         youTubePlayer
       )
-      
     }
     .statusBar(hidden: true)
     .preferredColorScheme(.dark)
