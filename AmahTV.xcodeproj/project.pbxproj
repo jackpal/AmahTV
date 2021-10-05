@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3679CD3D270A9EAD00EF92D5 /* AmahTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD3C270A9EAD00EF92D5 /* AmahTVApp.swift */; };
-		3679CD3F270A9EAD00EF92D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD3E270A9EAD00EF92D5 /* ContentView.swift */; };
 		3679CD41270A9EAE00EF92D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3679CD40270A9EAE00EF92D5 /* Assets.xcassets */; };
 		3679CD44270A9EAE00EF92D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3679CD43270A9EAE00EF92D5 /* Preview Assets.xcassets */; };
-		3679CD46270A9EAE00EF92D5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD45270A9EAE00EF92D5 /* Persistence.swift */; };
-		3679CD49270A9EAE00EF92D5 /* AmahTV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD47270A9EAE00EF92D5 /* AmahTV.xcdatamodeld */; };
 		3679CD51270AA7BF00EF92D5 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3679CD50270AA7BF00EF92D5 /* YouTubePlayerKit */; };
 		3679CD53270AA81200EF92D5 /* YouTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD52270AA81200EF92D5 /* YouTubeView.swift */; };
 		3679CD55270AB1E500EF92D5 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD54270AB1E500EF92D5 /* Channel.swift */; };
@@ -21,11 +18,8 @@
 /* Begin PBXFileReference section */
 		3679CD39270A9EAD00EF92D5 /* AmahTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmahTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3679CD3C270A9EAD00EF92D5 /* AmahTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmahTVApp.swift; sourceTree = "<group>"; };
-		3679CD3E270A9EAD00EF92D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3679CD40270A9EAE00EF92D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3679CD43270A9EAE00EF92D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3679CD45270A9EAE00EF92D5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		3679CD48270A9EAE00EF92D5 /* AmahTV.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AmahTV.xcdatamodel; sourceTree = "<group>"; };
 		3679CD52270AA81200EF92D5 /* YouTubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeView.swift; sourceTree = "<group>"; };
 		3679CD54270AB1E500EF92D5 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		3679CD56270AC46500EF92D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -64,10 +58,7 @@
 			children = (
 				3679CD56270AC46500EF92D5 /* Info.plist */,
 				3679CD3C270A9EAD00EF92D5 /* AmahTVApp.swift */,
-				3679CD3E270A9EAD00EF92D5 /* ContentView.swift */,
 				3679CD40270A9EAE00EF92D5 /* Assets.xcassets */,
-				3679CD45270A9EAE00EF92D5 /* Persistence.swift */,
-				3679CD47270A9EAE00EF92D5 /* AmahTV.xcdatamodeld */,
 				3679CD42270A9EAE00EF92D5 /* Preview Content */,
 				3679CD52270AA81200EF92D5 /* YouTubeView.swift */,
 				3679CD54270AB1E500EF92D5 /* Channel.swift */,
@@ -159,11 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3679CD49270A9EAE00EF92D5 /* AmahTV.xcdatamodeld in Sources */,
 				3679CD53270AA81200EF92D5 /* YouTubeView.swift in Sources */,
-				3679CD46270A9EAE00EF92D5 /* Persistence.swift in Sources */,
 				3679CD55270AB1E500EF92D5 /* Channel.swift in Sources */,
-				3679CD3F270A9EAD00EF92D5 /* ContentView.swift in Sources */,
 				3679CD3D270A9EAD00EF92D5 /* AmahTVApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,19 +382,6 @@
 			productName = YouTubePlayerKit;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		3679CD47270A9EAE00EF92D5 /* AmahTV.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3679CD48270A9EAE00EF92D5 /* AmahTV.xcdatamodel */,
-			);
-			currentVersion = 3679CD48270A9EAE00EF92D5 /* AmahTV.xcdatamodel */;
-			path = AmahTV.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3679CD31270A9EAC00EF92D5 /* Project object */;
 }
