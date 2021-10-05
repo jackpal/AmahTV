@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Channel : Equatable, Identifiable {
+struct Channel : Equatable, Hashable, Identifiable {
   var name: String
   var url: URL
 

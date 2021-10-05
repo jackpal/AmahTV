@@ -9,57 +9,54 @@ import SwiftUI
 import YouTubePlayerKit
 
 struct YouTubeView: View {
-  private let channels = Channel.channels
+  private let channels: [Channel]
   @State
-  private var selectedChannel: Channel?
-
+  private var selectedChannel: Channel
+  
   @StateObject
-  private var youTubePlayer =
-  YouTubePlayer(
-    configuration: .init(
-      captionLanguage: "zh-Hant",
-      showFullscreenButton: false,
-      language: "zh-Hant",
-      showAnnotations: false,
-      useModestBranding: true
+  private var youTubePlayer: YouTubePlayer
+  
+  init(channels: [Channel], initialSelectedChannelIndex: Int) {
+    self.channels = channels
+    let selectedChannel = channels[initialSelectedChannelIndex]
+    _selectedChannel = State(wrappedValue:selectedChannel)
+    _youTubePlayer =
+    StateObject(
+      wrappedValue:
+        YouTubePlayer(
+          source:.url(selectedChannel.url.absoluteString),
+          configuration: .init(
+            autoPlay:true,
+            captionLanguage: "zh-Hant",
+            showFullscreenButton: false,
+            language: "zh-Hant",
+            showAnnotations: false,
+            useModestBranding: true
+          )
+        )
     )
-  )
-
+  }
+  
   var body: some View {
-    VStack{
-      HStack {
-        ForEach(channels, id:\.name) {channel in
-          Button(action: {
-            choose(channel:channel)
-          }) {
-            HStack {
-              if channel == selectedChannel {
-                Image(systemName: "play.fill")
-              }
-              Text(channel.name)
-            }
-          }
-          .padding()
+    VStack {
+      Picker(selection: $selectedChannel, label: Text("Channel")) {
+        ForEach(channels) {channel in
+          Text(channel.name)
+            .tag(channel)
         }
       }
+      .pickerStyle(SegmentedPickerStyle())
+      .background(Color.black)
+      .onChange(of:selectedChannel) { newValue in
+        youTubePlayer.source = .url(newValue.url.absoluteString)
+      }
+      
       YouTubePlayerView(
         youTubePlayer
       )
+      
     }
     .statusBar(hidden: true)
-    .onAppear {
-      choose(channel:channels[1])
-    }
-  }
-
-  private func choose(channel:Channel) {
-    youTubePlayer.source = .url(channel.url.absoluteString)
-    selectedChannel = channel
-  }
-}
-
-struct YouTubeView_Previews: PreviewProvider {
-  static var previews: some View {
-    YouTubeView()
+    .preferredColorScheme(.dark)
   }
 }

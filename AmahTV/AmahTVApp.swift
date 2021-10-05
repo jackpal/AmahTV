@@ -13,7 +13,7 @@ struct AmahTVApp: App {
 
     var body: some Scene {
         WindowGroup {
-          YouTubeView()
+          YouTubeView(channels:Channel.channels, initialSelectedChannelIndex: 1)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
