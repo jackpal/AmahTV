@@ -8,6 +8,38 @@
 import SwiftUI
 import YouTubePlayerKit
 
+extension YouTubePlayer.State : CustomStringConvertible {
+  public var description : String {
+    switch self {
+    case .idle:
+      return "idle"
+    case .ready:
+      return "ready"
+    case let .error(e):
+      return "error(\(e))"
+    }
+  }
+}
+
+extension YouTubePlayer.PlaybackState : CustomStringConvertible {
+  public var description : String {
+    switch self {
+    case .unstarted:
+      return "unstarted"
+    case .ended:
+      return "ended"
+    case .playing:
+      return "playing"
+    case .paused:
+      return "paused"
+    case .buffering:
+      return "buffering"
+    case .cued:
+      return "cued"
+    }
+  }
+}
+
 struct YouTubeView: View {
   private let channels: [Channel]
   @State
@@ -15,6 +47,12 @@ struct YouTubeView: View {
 
   @StateObject
   private var youTubePlayer: YouTubePlayer
+
+  @State
+  private var state: YouTubePlayer.State? = nil
+
+  @State
+  private var playbackState: YouTubePlayer.PlaybackState? = nil
 
   init(channels: [Channel], initialSelectedChannelIndex: Int) {
     self.channels = channels
@@ -54,9 +92,23 @@ struct YouTubeView: View {
       YouTubePlayerView(
         youTubePlayer,
         placeholderOverlay: {
-            ProgressView()
+          ProgressView()
         }
       )
+      .onAppear {
+        youTubePlayer.showStatsForNerds()
+      }
+      HStack {
+        Text("\(state?.description ?? "nil")")
+          .onReceive(youTubePlayer.statePublisher) { s in
+            state = s
+          }
+        Text("\(playbackState?.description ?? "nil")")
+          .onReceive(youTubePlayer.playbackStatePublisher) { s in
+            playbackState = s
+          }
+
+      }
     }
     .statusBar(hidden: true)
     .preferredColorScheme(.dark)
