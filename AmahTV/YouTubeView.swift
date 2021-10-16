@@ -96,9 +96,6 @@ struct YouTubeView: View {
           ProgressView()
         }
       )
-      .onAppear {
-        youTubePlayer.showStatsForNerds()
-      }
       HStack {
         Text("\(state?.description ?? "nil")")
           .onReceive(youTubePlayer.statePublisher) { s in
@@ -108,7 +105,6 @@ struct YouTubeView: View {
           .onReceive(youTubePlayer.playbackStatePublisher) { s in
             playbackState = s
           }
-
       }
     }
     .statusBar(hidden: true)
