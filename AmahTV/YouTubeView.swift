@@ -86,6 +86,7 @@ struct YouTubeView: View {
       }
       .pickerStyle(SegmentedPickerStyle())
       .onChange(of:selectedChannel) { newValue in
+        youTubePlayer.stop()
         youTubePlayer.source = .url(newValue.url.absoluteString)
       }
 
