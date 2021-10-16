@@ -31,7 +31,8 @@ struct YouTubeView: View {
             showFullscreenButton: false,
             language: "zh-Hant",
             showAnnotations: false,
-            useModestBranding: true
+            useModestBranding: true,
+            playInline: true
           )
         )
     )
@@ -51,10 +52,14 @@ struct YouTubeView: View {
       }
 
       YouTubePlayerView(
-        youTubePlayer
+        youTubePlayer,
+        placeholderOverlay: {
+            ProgressView()
+        }
       )
     }
     .statusBar(hidden: true)
     .preferredColorScheme(.dark)
+    .edgesIgnoringSafeArea(.bottom)
   }
 }
