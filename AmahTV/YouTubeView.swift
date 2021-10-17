@@ -78,12 +78,11 @@ struct YouTubeView: View {
       }
       .pickerStyle(SegmentedPickerStyle())
       .onChange(of:selectedChannel) { newValue in
-        youTubePlayer.stop()
         youTubePlayer.source = .url(newValue.url.absoluteString)
       }
       .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
-        // Stoping when entering background, and then resuming when entering foreground, works around
-        // a bug where the player is sometimes deleted while in the background. (I can't figure out if
+        // Stoping when entering background, and then resuming when entering foreground, seems to work around
+        // a situation where the player is sometimes deleted while in the background. I can't figure out if
         // there's any way of detecting that the player has been deleted. The user-visible symptom is that
         // the player view draws as black with no sound.
         youTubePlayer.stop()
