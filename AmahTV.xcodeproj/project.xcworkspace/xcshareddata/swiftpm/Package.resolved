@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "YouTubePlayerKit",
-        "repositoryURL": "https://github.com/jackpal/YouTubePlayerKit",
+        "repositoryURL": "https://github.com/SvenTiigi/YouTubePlayerKit",
         "state": {
           "branch": null,
-          "revision": "3f807c9390eeabbfc888c41b2a2efeac4970699f",
-          "version": "1.1.2"
+          "revision": "dc772897231885d7767c920195f47507e40f2ebe",
+          "version": "1.1.1"
         }
       }
     ]
