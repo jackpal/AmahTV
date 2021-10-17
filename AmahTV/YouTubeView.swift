@@ -63,15 +63,7 @@ struct YouTubeView: View {
       wrappedValue:
         YouTubePlayer(
           source:.url(selectedChannel.url.absoluteString),
-          configuration: .init(
-            autoPlay:true,
-            captionLanguage: "zh-Hant",
-            showFullscreenButton: false,
-            language: "zh-Hant",
-            showAnnotations: false,
-            useModestBranding: true,
-            playInline: true
-          )
+          configuration: YouTubeView.configuration
         )
     )
   }
@@ -89,12 +81,19 @@ struct YouTubeView: View {
         youTubePlayer.stop()
         youTubePlayer.source = .url(newValue.url.absoluteString)
       }
+      .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
+        // Stoping when entering background, and then resuming when entering foreground, works around
+        // a bug where the player is sometimes deleted while in the background. (I can't figure out if
+        // there's any way of detecting that the player has been deleted. The user-visible symptom is that
+        // the player view draws as black with no sound.
+        youTubePlayer.stop()
+      }
+      .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+        youTubePlayer.play()
+      }
 
       YouTubePlayerView(
-        youTubePlayer,
-        placeholderOverlay: {
-          ProgressView()
-        }
+        youTubePlayer
       )
       HStack {
         Text("\(state?.description ?? "nil")")
@@ -110,5 +109,18 @@ struct YouTubeView: View {
     .statusBar(hidden: true)
     .preferredColorScheme(.dark)
     .edgesIgnoringSafeArea(.bottom)
+  }
+
+  static var configuration: YouTubePlayer.Configuration {
+    YouTubePlayer.Configuration(
+      autoPlay:true,
+      captionLanguage: "zh-Hant",
+      showFullscreenButton: false,
+      language: "zh-Hant",
+      showAnnotations: false,
+      useModestBranding: true,
+      playInline: true,
+      referrer: "https://amahtv.palevichchenindustries.com/"
+    )
   }
 }

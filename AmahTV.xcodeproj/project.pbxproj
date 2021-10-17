@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360A05BA271BE618005E8D4B /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 360A05B9271BE618005E8D4B /* YouTubePlayerKit */; };
 		3679CD3D270A9EAD00EF92D5 /* AmahTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD3C270A9EAD00EF92D5 /* AmahTVApp.swift */; };
 		3679CD41270A9EAE00EF92D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3679CD40270A9EAE00EF92D5 /* Assets.xcassets */; };
 		3679CD44270A9EAE00EF92D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3679CD43270A9EAE00EF92D5 /* Preview Assets.xcassets */; };
-		3679CD51270AA7BF00EF92D5 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3679CD50270AA7BF00EF92D5 /* YouTubePlayerKit */; };
 		3679CD53270AA81200EF92D5 /* YouTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD52270AA81200EF92D5 /* YouTubeView.swift */; };
 		3679CD55270AB1E500EF92D5 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD54270AB1E500EF92D5 /* Channel.swift */; };
 /* End PBXBuildFile section */
@@ -30,7 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3679CD51270AA7BF00EF92D5 /* YouTubePlayerKit in Frameworks */,
+				360A05BA271BE618005E8D4B /* YouTubePlayerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 			);
 			name = AmahTV;
 			packageProductDependencies = (
-				3679CD50270AA7BF00EF92D5 /* YouTubePlayerKit */,
+				360A05B9271BE618005E8D4B /* YouTubePlayerKit */,
 			);
 			productName = AmahTV;
 			productReference = 3679CD39270A9EAD00EF92D5 /* AmahTV.app */;
@@ -122,7 +122,7 @@
 			);
 			mainGroup = 3679CD30270A9EAC00EF92D5;
 			packageReferences = (
-				3679CD4F270AA7BF00EF92D5 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+				360A05B8271BE618005E8D4B /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 			);
 			productRefGroup = 3679CD3A270A9EAD00EF92D5 /* Products */;
 			projectDirPath = "";
@@ -365,9 +365,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3679CD4F270AA7BF00EF92D5 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+		360A05B8271BE618005E8D4B /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit";
+			repositoryURL = "https://github.com/jackpal/YouTubePlayerKit";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
@@ -376,9 +376,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3679CD50270AA7BF00EF92D5 /* YouTubePlayerKit */ = {
+		360A05B9271BE618005E8D4B /* YouTubePlayerKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3679CD4F270AA7BF00EF92D5 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			package = 360A05B8271BE618005E8D4B /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
 			productName = YouTubePlayerKit;
 		};
 /* End XCSwiftPackageProductDependency section */
