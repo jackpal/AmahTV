@@ -44,16 +44,19 @@ struct YouTubeView: View {
   private let channels: [Channel]
   @State
   private var selectedChannel: Channel
-
+  
   @StateObject
   private var youTubePlayer: YouTubePlayer
-
+  
   @State
   private var state: YouTubePlayer.State? = nil
-
+  
   @State
   private var playbackState: YouTubePlayer.PlaybackState? = nil
-
+  
+  @State
+  private var resetCount: Int = 0
+  
   init(channels: [Channel], initialSelectedChannelIndex: Int) {
     self.channels = channels
     let selectedChannel = channels[initialSelectedChannelIndex]
@@ -67,7 +70,7 @@ struct YouTubeView: View {
         )
     )
   }
-
+  
   var body: some View {
     VStack {
       Picker(selection: $selectedChannel, label: Text("Channel")) {
@@ -92,13 +95,29 @@ struct YouTubeView: View {
           .onReceive(youTubePlayer.playbackStatePublisher) { s in
             playbackState = s
           }
+        Text("\(resetCount)")
+        Button("Reload") {
+          reloadPlayer()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+          // Work around black-screen-after-overnight bug.
+          reloadPlayer()
+        }
+        Spacer()
       }
     }
     .statusBar(hidden: true)
     .preferredColorScheme(.dark)
     .edgesIgnoringSafeArea(.bottom)
   }
-
+  
+  private func reloadPlayer() {
+    resetCount += 1
+    var config = YouTubeView.configuration
+    config.referrer! += "?resetCount=\(resetCount)"
+    youTubePlayer.configuration = config
+  }
+  
   static var configuration: YouTubePlayer.Configuration {
     YouTubePlayer.Configuration(
       autoPlay:true,
@@ -107,7 +126,7 @@ struct YouTubeView: View {
       language: "zh-Hant",
       showAnnotations: false,
       useModestBranding: true,
-      playInline: true,
+      // playInline: true,
       referrer: "https://amahtv.palevichchenindustries.com/"
     )
   }
