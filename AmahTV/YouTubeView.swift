@@ -81,6 +81,14 @@ struct YouTubeView: View {
       YouTubePlayerView(
         youTubePlayer
       )
+      .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+        // Work around black-screen-after-overnight bug.
+        reloadPlayer()
+      }
+      .onAppear {
+        youTubePlayer.source = .url(selectedChannel.url.absoluteString)
+        youTubePlayer.configuration = YouTubeView.configuration
+      }
       HStack {
         Text("\(state?.description ?? "nil")")
           .onReceive(youTubePlayer.statePublisher) { s in
@@ -93,14 +101,6 @@ struct YouTubeView: View {
         Text("\(resetCount)")
         Button("Reload") {
           reloadPlayer()
-        }
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-          // Work around black-screen-after-overnight bug.
-          reloadPlayer()
-        }
-        .onAppear {
-          youTubePlayer.source = .url(selectedChannel.url.absoluteString)
-          youTubePlayer.configuration = YouTubeView.configuration
         }
         Spacer()
       }
