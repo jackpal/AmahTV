@@ -42,11 +42,15 @@ extension YouTubePlayer.PlaybackState : CustomStringConvertible {
 
 struct YouTubeView: View {
   private let channels: [Channel]
-  @State
-  private var selectedChannel: Channel
+
+  @Binding private var selectedChannelIndex: Int
+
+  private var selectedChannel: Channel {
+    channels[max(0,min(selectedChannelIndex, channels.count-1))]
+  }
   
   @StateObject
-  private var youTubePlayer: YouTubePlayer
+  private var youTubePlayer: YouTubePlayer = YouTubePlayer()
   
   @State
   private var state: YouTubePlayer.State? = nil
@@ -57,26 +61,17 @@ struct YouTubeView: View {
   @State
   private var resetCount: Int = 0
   
-  init(channels: [Channel], initialSelectedChannelIndex: Int) {
+  init(channels: [Channel], selectedChannelIndex: Binding<Int>) {
     self.channels = channels
-    let selectedChannel = channels[initialSelectedChannelIndex]
-    _selectedChannel = State(wrappedValue:selectedChannel)
-    _youTubePlayer =
-    StateObject(
-      wrappedValue:
-        YouTubePlayer(
-          source:.url(selectedChannel.url.absoluteString),
-          configuration: YouTubeView.configuration
-        )
-    )
+    _selectedChannelIndex = selectedChannelIndex
   }
   
   var body: some View {
     VStack {
-      Picker(selection: $selectedChannel, label: Text("Channel")) {
-        ForEach(channels) {channel in
+      Picker(selection: $selectedChannelIndex, label: Text("Channel")) {
+        ForEach(Array(channels.enumerated()), id: \.1) {index, channel in
           Text(channel.name)
-            .tag(channel)
+            .tag(index)
         }
       }
       .pickerStyle(SegmentedPickerStyle())
@@ -102,6 +97,10 @@ struct YouTubeView: View {
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
           // Work around black-screen-after-overnight bug.
           reloadPlayer()
+        }
+        .onAppear {
+          youTubePlayer.source = .url(selectedChannel.url.absoluteString)
+          youTubePlayer.configuration = YouTubeView.configuration
         }
         Spacer()
       }

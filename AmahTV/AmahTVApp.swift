@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct AmahTVApp: App {
+  @AppStorage("selectedChannelIndex")
+  private var selectedChannelIndex: Int = 1
 
-    var body: some Scene {
-        WindowGroup {
-          YouTubeView(channels:Channel.channels, initialSelectedChannelIndex: 1)
-        }
+
+  var body: some Scene {
+    WindowGroup {
+      YouTubeView(channels:Channel.channels, selectedChannelIndex: $selectedChannelIndex)
     }
+  }
 }
