@@ -17,7 +17,7 @@ struct AmahTVApp: App {
 
   var body: some Scene {
     WindowGroup {
-      YouTubeView(channels:$channels, selectedChannelIndex: $selectedChannelIndex)
+      WatchView(channels:$channels, selectedChannelIndex: $selectedChannelIndex)
     }
   }
 }

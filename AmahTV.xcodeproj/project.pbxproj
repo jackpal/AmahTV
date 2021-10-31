@@ -15,6 +15,7 @@
 		3679CD53270AA81200EF92D5 /* YouTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD52270AA81200EF92D5 /* YouTubeView.swift */; };
 		3679CD55270AB1E500EF92D5 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD54270AB1E500EF92D5 /* Channel.swift */; };
 		369119CF272F340300C7D08C /* ChannelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119CE272F340300C7D08C /* ChannelPicker.swift */; };
+		369119D1272F363A00C7D08C /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119D0272F363A00C7D08C /* WatchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		3679CD54270AB1E500EF92D5 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		3679CD56270AC46500EF92D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		369119CE272F340300C7D08C /* ChannelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPicker.swift; sourceTree = "<group>"; };
+		369119D0272F363A00C7D08C /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				3679CD54270AB1E500EF92D5 /* Channel.swift */,
 				369119CE272F340300C7D08C /* ChannelPicker.swift */,
 				360CA42C272E5B550075ADF7 /* OEmbed.swift */,
+				369119D0272F363A00C7D08C /* WatchView.swift */,
 				3679CD52270AA81200EF92D5 /* YouTubeView.swift */,
 			);
 			path = AmahTV;
@@ -158,6 +161,7 @@
 			files = (
 				3679CD53270AA81200EF92D5 /* YouTubeView.swift in Sources */,
 				3679CD55270AB1E500EF92D5 /* Channel.swift in Sources */,
+				369119D1272F363A00C7D08C /* WatchView.swift in Sources */,
 				3679CD3D270A9EAD00EF92D5 /* AmahTVApp.swift in Sources */,
 				360CA42D272E5B550075ADF7 /* OEmbed.swift in Sources */,
 				369119CF272F340300C7D08C /* ChannelPicker.swift in Sources */,

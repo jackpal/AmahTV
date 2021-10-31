@@ -63,13 +63,12 @@ struct YouTubeView: View {
   
   var body: some View {
     VStack {
-      ChannelPicker(channels:$channels, selectedChannelIndex: $selectedChannelIndex)
-      .onChange(of:selectedChannel) { newValue in
-        youTubePlayer.source = .url(newValue.url.absoluteString)
-      }
       YouTubePlayerView(
         youTubePlayer
       )
+      .onChange(of:selectedChannel) { newValue in
+        youTubePlayer.source = .url(newValue.url.absoluteString)
+      }
       .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
         // Work around black-screen-after-overnight bug.
         reloadPlayer()
