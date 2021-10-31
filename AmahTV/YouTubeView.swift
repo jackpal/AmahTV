@@ -63,13 +63,7 @@ struct YouTubeView: View {
   
   var body: some View {
     VStack {
-      Picker(selection: $selectedChannelIndex, label: Text("Channel")) {
-        ForEach(Array(channels.enumerated()), id: \.1) {index, channel in
-          Text(channel.name)
-            .tag(index)
-        }
-      }
-      .pickerStyle(SegmentedPickerStyle())
+      ChannelPicker(channels:$channels, selectedChannelIndex: $selectedChannelIndex)
       .onChange(of:selectedChannel) { newValue in
         youTubePlayer.source = .url(newValue.url.absoluteString)
       }
