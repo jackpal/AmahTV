@@ -12,10 +12,12 @@ struct AmahTVApp: App {
   @AppStorage("selectedChannelIndex")
   private var selectedChannelIndex: Int = 1
 
+  @AppStorage("channels")
+  private var channels = Channel.channels
 
   var body: some Scene {
     WindowGroup {
-      YouTubeView(channels:Channel.channels, selectedChannelIndex: $selectedChannelIndex)
+      YouTubeView(channels:$channels, selectedChannelIndex: $selectedChannelIndex)
     }
   }
 }

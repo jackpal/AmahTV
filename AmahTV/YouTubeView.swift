@@ -41,9 +41,9 @@ extension YouTubePlayer.PlaybackState : CustomStringConvertible {
 }
 
 struct YouTubeView: View {
-  private let channels: [Channel]
+  @Binding public var channels: Channels
 
-  @Binding private var selectedChannelIndex: Int
+  @Binding public var selectedChannelIndex: Int
 
   private var selectedChannel: Channel {
     channels[max(0,min(selectedChannelIndex, channels.count-1))]
@@ -60,11 +60,6 @@ struct YouTubeView: View {
   
   @State
   private var resetCount: Int = 0
-  
-  init(channels: [Channel], selectedChannelIndex: Binding<Int>) {
-    self.channels = channels
-    _selectedChannelIndex = selectedChannelIndex
-  }
   
   var body: some View {
     VStack {

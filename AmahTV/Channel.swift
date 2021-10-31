@@ -7,13 +7,35 @@
 
 import Foundation
 
-struct Channel : Equatable, Hashable, Identifiable {
+struct Channel : Equatable, Hashable, Identifiable, Codable {
   var name: String
   var url: URL {
     URL(string:"https://www.youtube.com/watch?v=\(id)")!
   }
 
   var id: String
+}
+
+typealias Channels = [Channel]
+
+extension Channels: RawRepresentable {
+    public init?(rawValue: String) {
+        guard let data = rawValue.data(using: .utf8),
+            let result = try? JSONDecoder().decode(Channels.self, from: data)
+        else {
+            return nil
+        }
+        self = result
+    }
+
+    public var rawValue: String {
+        guard let data = try? JSONEncoder().encode(self),
+            let result = String(data: data, encoding: .utf8)
+        else {
+            return "[]"
+        }
+        return result
+    }
 }
 
 /// Channels from https://www.squidtv.net/asia/taiwan/
