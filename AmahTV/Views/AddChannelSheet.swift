@@ -11,18 +11,42 @@ struct AddChannelSheet: View {
   var body: some View {
     NavigationView {
       Form {
-        TextField("Name", text:$name)
-        TextField("Video ID", text:$videoID)
+        Section {
+          TextField("Name", text:$name)
+          TextField("Video ID or YouTube Link", text:$videoID)
+        }
+        Section {
+          Button("Save"){
+            if let vid = videoID.videoID {
+              tv.channels.append(Channel(name:name, id:vid))
+              self.presentationMode.wrappedValue.dismiss()
+            }
+          }
+          .disabled(name.isEmpty || videoID.videoID == nil)
+        }
       }
       .toolbar {
-        Button("Save"){
-          tv.channels.append(Channel(name:name, id:videoID))
-          self.presentationMode.wrappedValue.dismiss()
-        }
         Button("Dismiss"){
           self.presentationMode.wrappedValue.dismiss()
         }
       }
     }.navigationViewStyle(StackNavigationViewStyle())
+  }
+}
+
+extension String {
+  var videoID : String? {
+    // Currently all the video IDs are of count 11, but that may change someday.
+    if self.count == 11 {
+      return self
+    }
+    let parts = self.components(separatedBy: "v=")
+    if parts.count == 2 {
+      let v = parts[1]
+      if v.count == 11 {
+        return v
+      }
+    }
+    return nil
   }
 }
