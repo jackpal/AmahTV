@@ -41,13 +41,7 @@ extension YouTubePlayer.PlaybackState : CustomStringConvertible {
 }
 
 struct YouTubeView: View {
-  @Binding public var channels: Channels
-
-  @Binding public var selectedChannelIndex: Int
-
-  private var selectedChannel: Channel {
-    channels[max(0,min(selectedChannelIndex, channels.count-1))]
-  }
+  public var channel: Channel
   
   @StateObject
   private var youTubePlayer: YouTubePlayer = YouTubePlayer()
@@ -66,7 +60,7 @@ struct YouTubeView: View {
       YouTubePlayerView(
         youTubePlayer
       )
-      .onChange(of:selectedChannel) { newValue in
+      .onChange(of:channel) { newValue in
         youTubePlayer.source = .url(newValue.url.absoluteString)
       }
       .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
@@ -74,7 +68,7 @@ struct YouTubeView: View {
         reloadPlayer()
       }
       .onAppear {
-        youTubePlayer.source = .url(selectedChannel.url.absoluteString)
+        youTubePlayer.source = .url(channel.url.absoluteString)
         youTubePlayer.configuration = YouTubeView.configuration
       }
       HStack {

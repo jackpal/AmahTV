@@ -9,15 +9,11 @@ import SwiftUI
 
 @main
 struct AmahTVApp: App {
-  @AppStorage("selectedChannelIndex")
-  private var selectedChannelIndex: Int = 1
-
-  @AppStorage("channels")
-  private var channels = Channel.channels
+  @StateObject private var tv = TV()
 
   var body: some Scene {
     WindowGroup {
-      WatchView(channels:$channels, selectedChannelIndex: $selectedChannelIndex)
+      WatchView(tv:tv)
     }
   }
 }
