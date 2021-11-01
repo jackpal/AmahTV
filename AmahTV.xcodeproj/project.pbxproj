@@ -18,6 +18,8 @@
 		369119D1272F363A00C7D08C /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119D0272F363A00C7D08C /* WatchView.swift */; };
 		369119D5272F8D4700C7D08C /* TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119D4272F8D4700C7D08C /* TV.swift */; };
 		369119D9272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */; };
+		369119DB272F9F3D00C7D08C /* TVSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119DA272F9F3D00C7D08C /* TVSettings.swift */; };
+		369119DD272FA38700C7D08C /* AddChannelSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119DC272FA38700C7D08C /* AddChannelSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		369119D0272F363A00C7D08C /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 		369119D4272F8D4700C7D08C /* TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TV.swift; sourceTree = "<group>"; };
 		369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YouTubePlayer+CustomStringConvertable.swift"; sourceTree = "<group>"; };
+		369119DA272F9F3D00C7D08C /* TVSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSettings.swift; sourceTree = "<group>"; };
+		369119DC272FA38700C7D08C /* AddChannelSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 				369119D0272F363A00C7D08C /* WatchView.swift */,
 				3679CD52270AA81200EF92D5 /* YouTubeView.swift */,
 				369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */,
+				369119DA272F9F3D00C7D08C /* TVSettings.swift */,
+				369119DC272FA38700C7D08C /* AddChannelSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +189,8 @@
 			files = (
 				3679CD53270AA81200EF92D5 /* YouTubeView.swift in Sources */,
 				3679CD55270AB1E500EF92D5 /* Channel.swift in Sources */,
+				369119DB272F9F3D00C7D08C /* TVSettings.swift in Sources */,
+				369119DD272FA38700C7D08C /* AddChannelSheet.swift in Sources */,
 				369119D1272F363A00C7D08C /* WatchView.swift in Sources */,
 				369119D5272F8D4700C7D08C /* TV.swift in Sources */,
 				369119D9272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift in Sources */,
