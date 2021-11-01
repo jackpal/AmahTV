@@ -17,6 +17,7 @@
 		369119CF272F340300C7D08C /* ChannelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119CE272F340300C7D08C /* ChannelPicker.swift */; };
 		369119D1272F363A00C7D08C /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119D0272F363A00C7D08C /* WatchView.swift */; };
 		369119D5272F8D4700C7D08C /* TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119D4272F8D4700C7D08C /* TV.swift */; };
+		369119D9272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		369119CE272F340300C7D08C /* ChannelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPicker.swift; sourceTree = "<group>"; };
 		369119D0272F363A00C7D08C /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 		369119D4272F8D4700C7D08C /* TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TV.swift; sourceTree = "<group>"; };
+		369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YouTubePlayer+CustomStringConvertable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				369119CE272F340300C7D08C /* ChannelPicker.swift */,
 				369119D0272F363A00C7D08C /* WatchView.swift */,
 				3679CD52270AA81200EF92D5 /* YouTubeView.swift */,
+				369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				3679CD55270AB1E500EF92D5 /* Channel.swift in Sources */,
 				369119D1272F363A00C7D08C /* WatchView.swift in Sources */,
 				369119D5272F8D4700C7D08C /* TV.swift in Sources */,
+				369119D9272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift in Sources */,
 				3679CD3D270A9EAD00EF92D5 /* AmahTVApp.swift in Sources */,
 				360CA42D272E5B550075ADF7 /* OEmbed.swift in Sources */,
 				369119CF272F340300C7D08C /* ChannelPicker.swift in Sources */,

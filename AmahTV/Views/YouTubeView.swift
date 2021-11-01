@@ -8,49 +8,11 @@
 import SwiftUI
 import YouTubePlayerKit
 
-extension YouTubePlayer.State : CustomStringConvertible {
-  public var description : String {
-    switch self {
-    case .idle:
-      return "idle"
-    case .ready:
-      return "ready"
-    case let .error(e):
-      return "error(\(e))"
-    }
-  }
-}
-
-extension YouTubePlayer.PlaybackState : CustomStringConvertible {
-  public var description : String {
-    switch self {
-    case .unstarted:
-      return "unstarted"
-    case .ended:
-      return "ended"
-    case .playing:
-      return "playing"
-    case .paused:
-      return "paused"
-    case .buffering:
-      return "buffering"
-    case .cued:
-      return "cued"
-    }
-  }
-}
-
 struct YouTubeView: View {
   public var channel: Channel
   
   @StateObject
   private var youTubePlayer: YouTubePlayer = YouTubePlayer()
-  
-  @State
-  private var state: YouTubePlayer.State? = nil
-  
-  @State
-  private var playbackState: YouTubePlayer.PlaybackState? = nil
   
   @State
   private var resetCount: Int = 0
@@ -71,25 +33,9 @@ struct YouTubeView: View {
         youTubePlayer.source = .url(channel.url.absoluteString)
         youTubePlayer.configuration = YouTubeView.configuration
       }
-      HStack {
-        Text("\(state?.description ?? "nil")")
-          .onReceive(youTubePlayer.statePublisher) { s in
-            state = s
-          }
-        Text("\(playbackState?.description ?? "nil")")
-          .onReceive(youTubePlayer.playbackStatePublisher) { s in
-            playbackState = s
-          }
-        Text("\(resetCount)")
-        Button("Reload") {
-          reloadPlayer()
-        }
-        Spacer()
-      }
     }
     .statusBar(hidden: true)
     .preferredColorScheme(.dark)
-    .edgesIgnoringSafeArea(.bottom)
   }
   
   private func reloadPlayer() {
