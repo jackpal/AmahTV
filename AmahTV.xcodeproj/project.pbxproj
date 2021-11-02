@@ -91,12 +91,12 @@
 		369119D2272F8CF500C7D08C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				369119CE272F340300C7D08C /* ChannelPicker.swift */,
-				369119D0272F363A00C7D08C /* WatchView.swift */,
-				3679CD52270AA81200EF92D5 /* YouTubeView.swift */,
-				369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */,
-				369119DA272F9F3D00C7D08C /* TVSettings.swift */,
 				369119DC272FA38700C7D08C /* AddChannelSheet.swift */,
+				369119CE272F340300C7D08C /* ChannelPicker.swift */,
+				369119DA272F9F3D00C7D08C /* TVSettings.swift */,
+				369119D0272F363A00C7D08C /* WatchView.swift */,
+				369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */,
+				3679CD52270AA81200EF92D5 /* YouTubeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
