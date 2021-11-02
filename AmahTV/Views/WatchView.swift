@@ -6,26 +6,29 @@ struct WatchView: View {
   @State private var showDetail = false
 
   var body: some View {
-    VStack(spacing:0) {
-      HStack {
-        channelPicker
-        settingsButton
+    NavigationView {
+      VStack(spacing:0) {
+        HStack {
+          channelPicker
+          settingsButton
+        }
+        YouTubeView(channel: tv.channel)
       }
-      YouTubeView(channel: tv.channel)
+      .navigationBarTitle("", displayMode: .inline)
+      .navigationBarHidden(true)
     }
+    .navigationViewStyle(.stack)
   }
 
   @ViewBuilder
   var settingsButton: some View {
+    NavigationLink(destination: TVSettings(tv:tv), isActive: $showSettings) { EmptyView() }
     Button {
       showSettings = true
     } label: {
       Image(systemName: "gear").imageScale(.large)
     }
     .padding()
-    .sheet(isPresented: $showSettings) {
-      TVSettings(tv:tv)
-    }
   }
 
   @ViewBuilder

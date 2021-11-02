@@ -2,40 +2,40 @@ import SwiftUI
 
 struct TVSettings: View {
   @ObservedObject public var tv: TV
-  @Environment(\.presentationMode)
-  var presentationMode: Binding<PresentationMode>
-  @State
-  var showAddChannelSheet = false
+  @State var showAddChannelSheet = false
 
   var body: some View {
-    NavigationView {
-      List {
-        ForEach(tv.channels) { channel in
+    List {
+      ForEach($tv.channels) { $channel in
+        NavigationLink(destination: EditChannel(channel:$channel)) {
           Text(channel.name)
-        }.onDelete{
-          tv.channels.remove(atOffsets: $0)
-          tv.save()
-        }.onMove {
-          tv.channels.move(fromOffsets: $0, toOffset: $1)
-          tv.save()
         }
+      }.onDelete {
+        tv.channels.remove(atOffsets: $0)
+        tv.save()
+      }.onMove {
+        tv.channels.move(fromOffsets: $0, toOffset: $1)
+        tv.save()
       }
-      .toolbar {
-        EditButton()
+      .onDisappear {
+        tv.save()
       }
-      .navigationBarTitle("Channels")
-      .navigationBarItems(trailing:
-                            HStack {
-        Button("+") {
-          showAddChannelSheet = true
-        }
-        .sheet(isPresented: $showAddChannelSheet) {
-          AddChannelSheet(tv:tv)
     }
-        Button("Dismiss"){
-          self.presentationMode.wrappedValue.dismiss()
-        }
-               })
-      }
-                          }
-                          }
+    .navigationBarTitle("Channels")
+    .navigationBarItems(trailing:
+                          HStack {
+      EditButton()
+      addChannel
+    })
+  }
+
+  var addChannel: some View {
+    Button(action: {
+      showAddChannelSheet = true
+    }){ Image(systemName: "plus.rectangle").imageScale(.large)
+    }
+    .sheet(isPresented: $showAddChannelSheet) {
+      AddChannelSheet(tv:tv)
+    }
+  }
+}
