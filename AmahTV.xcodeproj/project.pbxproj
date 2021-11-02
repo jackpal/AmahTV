@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		360A05BD271BF355005E8D4B /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 360A05BC271BF355005E8D4B /* YouTubePlayerKit */; };
 		360CA42D272E5B550075ADF7 /* OEmbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CA42C272E5B550075ADF7 /* OEmbed.swift */; };
+		367300CF2730DF9300B311A8 /* URL+Resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367300CE2730DF9300B311A8 /* URL+Resolve.swift */; };
 		3679CD3D270A9EAD00EF92D5 /* AmahTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD3C270A9EAD00EF92D5 /* AmahTVApp.swift */; };
 		3679CD41270A9EAE00EF92D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3679CD40270A9EAE00EF92D5 /* Assets.xcassets */; };
 		3679CD44270A9EAE00EF92D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3679CD43270A9EAE00EF92D5 /* Preview Assets.xcassets */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		360CA42C272E5B550075ADF7 /* OEmbed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEmbed.swift; sourceTree = "<group>"; };
+		367300CE2730DF9300B311A8 /* URL+Resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Resolve.swift"; sourceTree = "<group>"; };
 		3679CD39270A9EAD00EF92D5 /* AmahTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmahTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3679CD3C270A9EAD00EF92D5 /* AmahTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmahTVApp.swift; sourceTree = "<group>"; };
 		3679CD40270A9EAE00EF92D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		367300CD2730DF5B00B311A8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				367300CE2730DF9300B311A8 /* URL+Resolve.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		3679CD30270A9EAC00EF92D5 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				369119D3272F8D1600C7D08C /* Models */,
+				367300CD2730DF5B00B311A8 /* Util */,
 				369119D2272F8CF500C7D08C /* Views */,
 				3679CD56270AC46500EF92D5 /* Info.plist */,
 				3679CD3C270A9EAD00EF92D5 /* AmahTVApp.swift */,
@@ -191,6 +202,7 @@
 				3679CD55270AB1E500EF92D5 /* Channel.swift in Sources */,
 				369119DB272F9F3D00C7D08C /* TVSettings.swift in Sources */,
 				369119DD272FA38700C7D08C /* AddChannelSheet.swift in Sources */,
+				367300CF2730DF9300B311A8 /* URL+Resolve.swift in Sources */,
 				369119D1272F363A00C7D08C /* WatchView.swift in Sources */,
 				369119D5272F8D4700C7D08C /* TV.swift in Sources */,
 				369119D9272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift in Sources */,
