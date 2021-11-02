@@ -2,23 +2,34 @@ import SwiftUI
 
 struct WatchView: View {
   @ObservedObject public var tv: TV
-  @State
-  var showSettings = false
+  @State private var showSettings = false
+  @State private var showDetail = false
+
   var body: some View {
-    VStack {
+    VStack(spacing:0) {
       HStack {
-        ChannelPicker(channels:$tv.channels, selectedChannelIndex: $tv.selectedChannelIndex)
-        Button {
-          showSettings = true
-        } label: {
-          Image(systemName: "gear")
-        }
-        .padding()
-          .sheet(isPresented: $showSettings) {
-            TVSettings(tv:tv)
+        channelPicker
+        settingsButton
       }
-      }
-      YouTubeView(channel:tv.channel)
+      YouTubeView(channel: tv.channel)
     }
+  }
+
+  @ViewBuilder
+  var settingsButton: some View {
+    Button {
+      showSettings = true
+    } label: {
+      Image(systemName: "gear").imageScale(.large)
+    }
+    .padding()
+    .sheet(isPresented: $showSettings) {
+      TVSettings(tv:tv)
+    }
+  }
+
+  @ViewBuilder
+  var channelPicker: some View {
+    ChannelPicker(channels:$tv.channels, selectedChannelIndex: $tv.selectedChannelIndex)
   }
 }

@@ -2,7 +2,6 @@ import SwiftUI
 
 struct ChannelPicker: View {
   @Binding public var channels: Channels
-
   @Binding public var selectedChannelIndex: Int
 
   var body: some View {

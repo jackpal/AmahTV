@@ -11,6 +11,12 @@ import SwiftUI
 struct AmahTVApp: App {
   @StateObject private var tv = TV()
 
+  init() {
+    UISegmentedControl.appearance().setTitleTextAttributes(
+      [
+        .font: UIFont.systemFont(ofSize: 18),
+      ], for: .normal)
+  }
   var body: some Scene {
     WindowGroup {
       WatchView(tv:tv)
