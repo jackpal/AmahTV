@@ -26,6 +26,7 @@
 		36A1FF6E2732371C00821C39 /* VideoMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1FF6D2732371C00821C39 /* VideoMetadata.swift */; };
 		36A1FF70273242B900821C39 /* VideoMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1FF6F273242B900821C39 /* VideoMetadataView.swift */; };
 		36A1FF7227324A8A00821C39 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1FF7127324A8A00821C39 /* LazyView.swift */; };
+		36A1FF742732533C00821C39 /* URL+promoteToHTTPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1FF732732533C00821C39 /* URL+promoteToHTTPS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		36A1FF6D2732371C00821C39 /* VideoMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMetadata.swift; sourceTree = "<group>"; };
 		36A1FF6F273242B900821C39 /* VideoMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMetadataView.swift; sourceTree = "<group>"; };
 		36A1FF7127324A8A00821C39 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		36A1FF732732533C00821C39 /* URL+promoteToHTTPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+promoteToHTTPS.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				367300CE2730DF9300B311A8 /* URL+Resolve.swift */,
 				36336B4B27310BD900756898 /* URL+videoID.swift */,
+				36A1FF732732533C00821C39 /* URL+promoteToHTTPS.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				3679CD3D270A9EAD00EF92D5 /* AmahTVApp.swift in Sources */,
 				36336B4C27310BD900756898 /* URL+videoID.swift in Sources */,
 				36336B4E27310C3100756898 /* EditChannel.swift in Sources */,
+				36A1FF742732533C00821C39 /* URL+promoteToHTTPS.swift in Sources */,
 				360CA42D272E5B550075ADF7 /* OEmbed.swift in Sources */,
 				369119CF272F340300C7D08C /* ChannelPicker.swift in Sources */,
 			);

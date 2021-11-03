@@ -43,8 +43,11 @@ class VideoMetadata : ObservableObject {
       if let v = url.videoID {
         return v
       }
-      let resolvedURL = try await url.resolve()
-      return resolvedURL.videoID
+      // Promote to https to avoid iOS Aoo Transport Security policy.
+      if let httpsURL = url.promoteToHTTPS {
+        let resolvedURL = try await httpsURL.resolve()
+        return resolvedURL.videoID
+      }
     }
     // Currently all the video IDs are of count 11, but that may change someday.
     if urlOrVideoID.count == 11 {

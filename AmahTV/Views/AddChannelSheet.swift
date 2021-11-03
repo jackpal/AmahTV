@@ -11,27 +11,26 @@ struct AddChannelSheet: View {
 
   var body: some View {
     NavigationView {
-      Form {
-        Section {
-          TextField("Name", text:$name)
-          TextField("YouTube Link or video ID", text:$urlOrVideoID)
-            .onChange(of: urlOrVideoID) { newValue in
-              videoMetadata.resolve(urlOrVideoID: urlOrVideoID)
-            }
-        }
-
-        Section {
-          VideoMetadataView(videoMetadata: videoMetadata)
-        }
-        Section {
-          Button("Save"){
-            if let vid = videoMetadata.videoID {
-              tv.channels.append(Channel(name:name, id:vid))
-              self.presentationMode.wrappedValue.dismiss()
-            }
+      VStack {
+        Form {
+          Section {
+            TextField("Name", text:$name)
+            TextField("YouTube Link or video ID", text:$urlOrVideoID)
+              .onChange(of: urlOrVideoID) { newValue in
+                videoMetadata.resolve(urlOrVideoID: urlOrVideoID)
+              }
           }
-          .disabled(name.isEmpty || videoMetadata.videoID == nil)
+          Section {
+            Button("Save"){
+              if let vid = videoMetadata.videoID {
+                tv.channels.append(Channel(name:name, id:vid))
+                self.presentationMode.wrappedValue.dismiss()
+              }
+            }
+            .disabled(name.isEmpty || videoMetadata.videoID == nil)
+          }
         }
+        VideoMetadataView(videoMetadata: videoMetadata)
       }
       .toolbar {
         Button("Dismiss"){
