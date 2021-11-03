@@ -7,7 +7,8 @@ struct TVSettings: View {
   var body: some View {
     List {
       ForEach($tv.channels) { $channel in
-        NavigationLink(destination: EditChannel(channel:$channel)) {
+        NavigationLink(destination:
+                        LazyView(EditChannel(channel:$channel))) {
           Text(channel.name)
         }
       }.onDelete {

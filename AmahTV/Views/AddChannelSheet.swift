@@ -6,23 +6,31 @@ struct AddChannelSheet: View {
   var presentationMode: Binding<PresentationMode>
 
   @State var name: String = ""
-  @State var videoID: String = ""
+  @State var urlOrVideoID: String = ""
+  @StateObject var videoMetadata = VideoMetadata()
 
   var body: some View {
     NavigationView {
       Form {
         Section {
           TextField("Name", text:$name)
-          TextField("Video ID or YouTube Link", text:$videoID)
+          TextField("YouTube Link or video ID", text:$urlOrVideoID)
+            .onChange(of: urlOrVideoID) { newValue in
+              videoMetadata.resolve(urlOrVideoID: urlOrVideoID)
+            }
+        }
+
+        Section {
+          VideoMetadataView(videoMetadata: videoMetadata)
         }
         Section {
           Button("Save"){
-            if let vid = videoID.videoID {
+            if let vid = videoMetadata.videoID {
               tv.channels.append(Channel(name:name, id:vid))
               self.presentationMode.wrappedValue.dismiss()
             }
           }
-          .disabled(name.isEmpty || videoID.videoID == nil)
+          .disabled(name.isEmpty || videoMetadata.videoID == nil)
         }
       }
       .toolbar {

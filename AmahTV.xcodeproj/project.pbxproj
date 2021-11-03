@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		360A05BD271BF355005E8D4B /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 360A05BC271BF355005E8D4B /* YouTubePlayerKit */; };
 		360CA42D272E5B550075ADF7 /* OEmbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CA42C272E5B550075ADF7 /* OEmbed.swift */; };
-		36336B4C27310BD900756898 /* String+videoID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36336B4B27310BD900756898 /* String+videoID.swift */; };
+		36336B4C27310BD900756898 /* URL+videoID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36336B4B27310BD900756898 /* URL+videoID.swift */; };
 		36336B4E27310C3100756898 /* EditChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36336B4D27310C3100756898 /* EditChannel.swift */; };
 		367300CF2730DF9300B311A8 /* URL+Resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367300CE2730DF9300B311A8 /* URL+Resolve.swift */; };
 		3679CD3D270A9EAD00EF92D5 /* AmahTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD3C270A9EAD00EF92D5 /* AmahTVApp.swift */; };
@@ -23,11 +23,14 @@
 		369119D9272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */; };
 		369119DB272F9F3D00C7D08C /* TVSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119DA272F9F3D00C7D08C /* TVSettings.swift */; };
 		369119DD272FA38700C7D08C /* AddChannelSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119DC272FA38700C7D08C /* AddChannelSheet.swift */; };
+		36A1FF6E2732371C00821C39 /* VideoMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1FF6D2732371C00821C39 /* VideoMetadata.swift */; };
+		36A1FF70273242B900821C39 /* VideoMetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1FF6F273242B900821C39 /* VideoMetadataView.swift */; };
+		36A1FF7227324A8A00821C39 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1FF7127324A8A00821C39 /* LazyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		360CA42C272E5B550075ADF7 /* OEmbed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEmbed.swift; sourceTree = "<group>"; };
-		36336B4B27310BD900756898 /* String+videoID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+videoID.swift"; sourceTree = "<group>"; };
+		36336B4B27310BD900756898 /* URL+videoID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+videoID.swift"; sourceTree = "<group>"; };
 		36336B4D27310C3100756898 /* EditChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChannel.swift; sourceTree = "<group>"; };
 		367300CE2730DF9300B311A8 /* URL+Resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Resolve.swift"; sourceTree = "<group>"; };
 		3679CD39270A9EAD00EF92D5 /* AmahTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmahTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +46,9 @@
 		369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YouTubePlayer+CustomStringConvertable.swift"; sourceTree = "<group>"; };
 		369119DA272F9F3D00C7D08C /* TVSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSettings.swift; sourceTree = "<group>"; };
 		369119DC272FA38700C7D08C /* AddChannelSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelSheet.swift; sourceTree = "<group>"; };
+		36A1FF6D2732371C00821C39 /* VideoMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMetadata.swift; sourceTree = "<group>"; };
+		36A1FF6F273242B900821C39 /* VideoMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMetadataView.swift; sourceTree = "<group>"; };
+		36A1FF7127324A8A00821C39 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				367300CE2730DF9300B311A8 /* URL+Resolve.swift */,
-				36336B4B27310BD900756898 /* String+videoID.swift */,
+				36336B4B27310BD900756898 /* URL+videoID.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -110,7 +116,9 @@
 				369119DC272FA38700C7D08C /* AddChannelSheet.swift */,
 				369119CE272F340300C7D08C /* ChannelPicker.swift */,
 				36336B4D27310C3100756898 /* EditChannel.swift */,
+				36A1FF7127324A8A00821C39 /* LazyView.swift */,
 				369119DA272F9F3D00C7D08C /* TVSettings.swift */,
+				36A1FF6F273242B900821C39 /* VideoMetadataView.swift */,
 				369119D0272F363A00C7D08C /* WatchView.swift */,
 				369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */,
 				3679CD52270AA81200EF92D5 /* YouTubeView.swift */,
@@ -124,6 +132,7 @@
 				3679CD54270AB1E500EF92D5 /* Channel.swift */,
 				360CA42C272E5B550075ADF7 /* OEmbed.swift */,
 				369119D4272F8D4700C7D08C /* TV.swift */,
+				36A1FF6D2732371C00821C39 /* VideoMetadata.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,12 +217,15 @@
 				3679CD55270AB1E500EF92D5 /* Channel.swift in Sources */,
 				369119DB272F9F3D00C7D08C /* TVSettings.swift in Sources */,
 				369119DD272FA38700C7D08C /* AddChannelSheet.swift in Sources */,
+				36A1FF7227324A8A00821C39 /* LazyView.swift in Sources */,
 				367300CF2730DF9300B311A8 /* URL+Resolve.swift in Sources */,
+				36A1FF70273242B900821C39 /* VideoMetadataView.swift in Sources */,
 				369119D1272F363A00C7D08C /* WatchView.swift in Sources */,
 				369119D5272F8D4700C7D08C /* TV.swift in Sources */,
 				369119D9272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift in Sources */,
+				36A1FF6E2732371C00821C39 /* VideoMetadata.swift in Sources */,
 				3679CD3D270A9EAD00EF92D5 /* AmahTVApp.swift in Sources */,
-				36336B4C27310BD900756898 /* String+videoID.swift in Sources */,
+				36336B4C27310BD900756898 /* URL+videoID.swift in Sources */,
 				36336B4E27310C3100756898 /* EditChannel.swift in Sources */,
 				360CA42D272E5B550075ADF7 /* OEmbed.swift in Sources */,
 				369119CF272F340300C7D08C /* ChannelPicker.swift in Sources */,

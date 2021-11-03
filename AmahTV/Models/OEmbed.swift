@@ -20,14 +20,16 @@ struct OEmbed : Codable {
   var providerURL: String?
   var thumbnailHeight: Int?
   var thumbnailWidth: Int?
-  var thumbnailURL: String?
+  var thumbnailUrl: String?
   var html: String?
 }
 
 extension OEmbed {
+
   static func url(id:String) -> URL? {
     URL(string: "https://www.youtube.com/oembed?url=http%3A//youtube.com/watch%3Fv%3D\(id)&format=json")
   }
+
 }
 
 extension OEmbed {
@@ -41,8 +43,9 @@ extension OEmbed {
     }
 
     let (data, _) = try await URLSession.shared.data(from: url)
-
-    return try JSONDecoder().decode(OEmbed.self, from: data)
+    let decoder = JSONDecoder()
+    decoder.keyDecodingStrategy = .convertFromSnakeCase
+    return try decoder.decode(OEmbed.self, from: data)
   }
 
 }

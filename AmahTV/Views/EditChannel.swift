@@ -2,18 +2,27 @@ import SwiftUI
 
 struct EditChannel: View {
   @Binding public var channel : Channel
-  @State private var videoIDOrLink: String
+  @State var urlOrVideoID: String = ""
+  @StateObject var videoMetadata =  VideoMetadata()
   init(channel: Binding<Channel>) {
     _channel = channel
-    _videoIDOrLink = State(initialValue:_channel.wrappedValue.id)
+    _urlOrVideoID = State(initialValue:_channel.wrappedValue.id)
   }
   var body: some View {
-    Form {
-      TextField("Name", text: $channel.name)
-      TextField("Video ID or YouTube Link", text: $videoIDOrLink)
+    VStack {
+      Form {
+        Section {
+          TextField("Name", text: $channel.name)
+          TextField("YouTube Link or video ID", text: $urlOrVideoID)
+        }
+      }
+      VideoMetadataView(videoMetadata: videoMetadata)
+    }
+    .onAppear {
+      videoMetadata.resolve(urlOrVideoID: urlOrVideoID)
     }
     .onDisappear {
-      if let videoID = videoIDOrLink.videoID {
+      if let videoID = videoMetadata.videoID {
         channel.id = videoID
       }
     }
