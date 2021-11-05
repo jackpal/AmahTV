@@ -16,7 +16,7 @@ struct EditChannel: View {
           TextField("YouTube Link or video ID", text: $urlOrVideoID)
         }
       }
-      VideoMetadataView(videoMetadata: videoMetadata)
+      VideoMetadataView(videoMetadata: videoMetadata, channel:channel)
     }
     .onAppear {
       videoMetadata.resolve(urlOrVideoID: urlOrVideoID)

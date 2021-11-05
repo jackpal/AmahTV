@@ -11,14 +11,11 @@ import YouTubePlayerKit
 struct YouTubeView: View {
   public var channel: Channel
   
-  @StateObject
-  private var youTubePlayer: YouTubePlayer = YouTubePlayer()
+  @Environment(\.youTubePlayer) var youTubePlayer
   
   var body: some View {
     VStack {
-      YouTubePlayerView(
-        youTubePlayer
-      )
+      YouTubePlayerView(youTubePlayer)
       .onChange(of:channel) { newValue in
         youTubePlayer.source = .url(newValue.url.absoluteString)
       }

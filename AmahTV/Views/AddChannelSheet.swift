@@ -8,6 +8,7 @@ struct AddChannelSheet: View {
   @State var name: String = ""
   @State var urlOrVideoID: String = ""
   @StateObject var videoMetadata = VideoMetadata()
+  @State var channel: Channel?
 
   var body: some View {
     NavigationView {
@@ -15,22 +16,30 @@ struct AddChannelSheet: View {
         Form {
           Section {
             TextField("Name", text:$name)
+              .onReceive(name.publisher) {_ in
+              updateChannel()
+            }
             TextField("YouTube Link or video ID", text:$urlOrVideoID)
               .onChange(of: urlOrVideoID) { newValue in
                 videoMetadata.resolve(urlOrVideoID: urlOrVideoID)
               }
           }
+          .onReceive(videoMetadata.objectWillChange) {_ in
+            updateChannel()
+          }
           Section {
             Button("Save"){
-              if let vid = videoMetadata.videoID {
-                tv.channels.append(Channel(name:name, id:vid))
+              if let channel = channel {
+                tv.channels.append(channel)
                 self.presentationMode.wrappedValue.dismiss()
               }
             }
             .disabled(name.isEmpty || videoMetadata.videoID == nil)
           }
         }
-        VideoMetadataView(videoMetadata: videoMetadata)
+        if let channel = channel {
+          VideoMetadataView(videoMetadata: videoMetadata, channel: channel)
+        }
       }
       .toolbar {
         Button("Dismiss"){
@@ -38,5 +47,13 @@ struct AddChannelSheet: View {
         }
       }
     }.navigationViewStyle(StackNavigationViewStyle())
+  }
+
+  private func updateChannel() {
+    if let videoID = videoMetadata.videoID, name != "" {
+      channel = Channel(name: name, id: videoID)
+    } else {
+      channel = nil
+    }
   }
 }

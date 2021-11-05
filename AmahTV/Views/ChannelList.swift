@@ -8,7 +8,7 @@ struct ChannelList: View {
     List {
       ForEach($tv.channels) { $channel in
         NavigationLink(destination:
-                        LazyView(EditChannel(channel:$channel))) {
+                        LazyView(YouTubeView(channel:channel))) {
           Text(channel.name)
         }
       }.onDelete {
