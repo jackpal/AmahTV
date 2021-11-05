@@ -14,9 +14,6 @@ struct YouTubeView: View {
   @StateObject
   private var youTubePlayer: YouTubePlayer = YouTubePlayer()
   
-  @State
-  private var resetCount: Int = 0
-  
   var body: some View {
     VStack {
       YouTubePlayerView(
@@ -25,10 +22,6 @@ struct YouTubeView: View {
       .onChange(of:channel) { newValue in
         youTubePlayer.source = .url(newValue.url.absoluteString)
       }
-      .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-        // Work around black-screen-after-overnight bug.
-        reloadPlayer()
-      }
       .onAppear {
         youTubePlayer.source = .url(channel.url.absoluteString)
         youTubePlayer.configuration = YouTubeView.configuration
@@ -36,13 +29,6 @@ struct YouTubeView: View {
     }
     .statusBar(hidden: true)
     .preferredColorScheme(.dark)
-  }
-  
-  private func reloadPlayer() {
-    resetCount += 1
-    var config = YouTubeView.configuration
-    config.referrer! += "?resetCount=\(resetCount)"
-    youTubePlayer.configuration = config
   }
   
   static var configuration: YouTubePlayer.Configuration {
