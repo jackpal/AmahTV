@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ChannelList: View {
-  @ObservedObject public var tv: TV
+  @EnvironmentObject private var tv: TV
   @State var showAddChannelSheet = false
 
   var body: some View {

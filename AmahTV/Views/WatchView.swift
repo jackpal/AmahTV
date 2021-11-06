@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct WatchView: View {
-  @ObservedObject public var tv: TV
+  @EnvironmentObject private var tv: TV
 
   var body: some View {
     VStack(spacing:0) {

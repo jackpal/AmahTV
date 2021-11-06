@@ -19,7 +19,8 @@ struct AmahTVApp: App {
   }
   var body: some Scene {
     WindowGroup {
-      ContentView(tv:tv)
+      ContentView()
+        .environmentObject(tv)
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
           tv.save()
         }

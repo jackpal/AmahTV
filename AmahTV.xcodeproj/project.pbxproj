@@ -15,7 +15,6 @@
 		367354272736E07F00EE5EBD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 367354262736E07F00EE5EBD /* Settings.bundle */; };
 		3673542A2736E52500EE5EBD /* SimpleMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367354292736E52500EE5EBD /* SimpleMainView.swift */; };
 		3673542C2736E54200EE5EBD /* AdvancedMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673542B2736E54200EE5EBD /* AdvancedMainView.swift */; };
-		3673542E2736E68500EE5EBD /* TVKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673542D2736E68500EE5EBD /* TVKey.swift */; };
 		3676583A27338D0E00EA01E6 /* ChannelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676583927338D0E00EA01E6 /* ChannelList.swift */; };
 		3676583C27338EDA00EA01E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676583B27338EDA00EA01E6 /* ContentView.swift */; };
 		3676583E2734D3B900EA01E6 /* YouTubePlayerKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676583D2734D3B900EA01E6 /* YouTubePlayerKey.swift */; };
@@ -44,7 +43,6 @@
 		367354262736E07F00EE5EBD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		367354292736E52500EE5EBD /* SimpleMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMainView.swift; sourceTree = "<group>"; };
 		3673542B2736E54200EE5EBD /* AdvancedMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedMainView.swift; sourceTree = "<group>"; };
-		3673542D2736E68500EE5EBD /* TVKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVKey.swift; sourceTree = "<group>"; };
 		3676583927338D0E00EA01E6 /* ChannelList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelList.swift; sourceTree = "<group>"; };
 		3676583B27338EDA00EA01E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3676583D2734D3B900EA01E6 /* YouTubePlayerKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerKey.swift; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 				369119D0272F363A00C7D08C /* WatchView.swift */,
 				369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */,
 				3676583D2734D3B900EA01E6 /* YouTubePlayerKey.swift */,
-				3673542D2736E68500EE5EBD /* TVKey.swift */,
 				3679CD52270AA81200EF92D5 /* YouTubeView.swift */,
 			);
 			path = Views;
@@ -249,7 +246,6 @@
 				3679CD53270AA81200EF92D5 /* YouTubeView.swift in Sources */,
 				3679CD55270AB1E500EF92D5 /* Channel.swift in Sources */,
 				369119DB272F9F3D00C7D08C /* TVSettings.swift in Sources */,
-				3673542E2736E68500EE5EBD /* TVKey.swift in Sources */,
 				3673542A2736E52500EE5EBD /* SimpleMainView.swift in Sources */,
 				369119DD272FA38700C7D08C /* AddChannelSheet.swift in Sources */,
 				36A1FF7227324A8A00821C39 /* LazyView.swift in Sources */,
