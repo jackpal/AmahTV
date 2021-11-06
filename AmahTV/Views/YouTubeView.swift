@@ -9,7 +9,7 @@ import SwiftUI
 import YouTubePlayerKit
 
 struct YouTubeView: View {
-  public var channel: Channel
+  public var video: Video
   
   @State private var resetCount: Int = 0
   
@@ -18,7 +18,7 @@ struct YouTubeView: View {
   var body: some View {
     VStack {
       YouTubePlayerView(youTubePlayer)
-        .onChange(of:channel) { newValue in
+        .onChange(of:video) { newValue in
           youTubePlayer.source = .url(newValue.url.absoluteString)
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
@@ -26,7 +26,7 @@ struct YouTubeView: View {
           reloadPlayer()
         }
         .onAppear {
-          youTubePlayer.source = .url(channel.url.absoluteString)
+          youTubePlayer.source = .url(video.url.absoluteString)
           youTubePlayer.configuration = YouTubeView.configuration
         }
     }

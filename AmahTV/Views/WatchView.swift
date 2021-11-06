@@ -5,13 +5,13 @@ struct WatchView: View {
 
   var body: some View {
     VStack(spacing:0) {
-      channelPicker
-      YouTubeView(channel: tv.channel)
+      videoPicker
+      YouTubeView(video: tv.video)
     }
   }
 
   @ViewBuilder
-  var channelPicker: some View {
-    ChannelPicker(channels:$tv.channels, selectedChannelIndex: $tv.selectedChannelIndex)
+  var videoPicker: some View {
+    VideoPicker(videos:$tv.videos, selectedVideoIndex: $tv.selectedVideo)
   }
 }

@@ -1,21 +1,21 @@
 import SwiftUI
 
-struct ChannelList: View {
+struct VideoList: View {
   @EnvironmentObject private var tv: TV
-  @State var showAddChannelSheet = false
+  @State var showAddVideoSheet = false
 
   var body: some View {
     List {
-      ForEach($tv.channels) { $channel in
+      ForEach($tv.videos) { $video in
         NavigationLink(destination:
-                        LazyView(EditChannel(channel:$channel))) {
-          Text(channel.name)
+                        LazyView(EditVideo(video:$video))) {
+          Text(video.name)
         }
       }.onDelete {
-        tv.channels.remove(atOffsets: $0)
+        tv.videos.remove(atOffsets: $0)
         tv.save()
       }.onMove {
-        tv.channels.move(fromOffsets: $0, toOffset: $1)
+        tv.videos.move(fromOffsets: $0, toOffset: $1)
         tv.save()
       }
       .onDisappear {
@@ -26,17 +26,17 @@ struct ChannelList: View {
     .navigationBarItems(trailing:
                           HStack {
       EditButton()
-      addChannel
+      addVideoButton
     })
   }
 
-  var addChannel: some View {
+  var addVideoButton: some View {
     Button(action: {
-      showAddChannelSheet = true
+      showAddVideoSheet = true
     }){ Image(systemName: "plus.rectangle").imageScale(.large)
     }
-    .sheet(isPresented: $showAddChannelSheet) {
-      AddChannelSheet(tv:tv)
+    .sheet(isPresented: $showAddVideoSheet) {
+      AddVideoSheet(tv:tv)
     }
   }
 }

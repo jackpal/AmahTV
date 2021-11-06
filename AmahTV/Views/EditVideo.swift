@@ -1,24 +1,24 @@
 import SwiftUI
 
-struct EditChannel: View {
-  @Binding public var channel : Channel
+struct EditVideo: View {
+  @Binding public var video: Video
   @State var urlOrVideoID: String = ""
   @StateObject var videoMetadata =  VideoMetadata()
-  init(channel: Binding<Channel>) {
-    _channel = channel
-    _urlOrVideoID = State(initialValue:_channel.wrappedValue.id)
+  init(video: Binding<Video>) {
+    _video = video
+    _urlOrVideoID = State(initialValue:_video.wrappedValue.id)
   }
   var body: some View {
     VStack {
       Form {
         Section(header: Text("Name")) {
-          TextField("Name", text: $channel.name)
+          TextField("Name", text: $video.name)
         }
         Section(header: Text("YouTube Link or Video ID")) {
           TextField("YouTube Link or video ID", text: $urlOrVideoID)
         }
         Section(header: Text("Preview")) {
-          VideoMetadataView(videoMetadata: videoMetadata, channel:channel)
+          VideoMetadataView(videoMetadata: videoMetadata, video:video)
         }
       }
     }
@@ -29,7 +29,7 @@ struct EditChannel: View {
     }
     .onDisappear {
       if let videoID = videoMetadata.videoID {
-        channel.id = videoID
+        video.id = videoID
       }
     }
   }

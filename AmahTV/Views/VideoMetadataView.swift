@@ -3,7 +3,7 @@ import YouTubePlayerKit
 
 struct VideoMetadataView : View {
   @ObservedObject public var videoMetadata: VideoMetadata
-  public let channel: Channel
+  public let video: Video
   var body: some View {
     VStack {
       if let title = videoMetadata.title {

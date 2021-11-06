@@ -8,16 +8,16 @@
 import Foundation
 
 class TV : ObservableObject {
-  @Published var selectedChannelIndex: Int = 1
-  @Published var channels: Channels = Channel.channels
+  @Published var selectedVideo: Int = 0
+  @Published var videos: Videos = Video.videos
 
-  var channel: Channel {
-    channels[min(channels.count-1,max(0,selectedChannelIndex))]
+  var video: Video {
+    videos[min(videos.count-1,max(0,selectedVideo))]
   }
 
   private struct TVState : Codable {
-    var selectedChannelIndex : Int
-    var channels: Channels
+    var selectedVideoIndex : Int
+    var videos: Videos
   }
 
   func load() {
@@ -25,12 +25,12 @@ class TV : ObservableObject {
           let state = try?  JSONDecoder().decode(TVState.self, from: data) else {
       return
     }
-    selectedChannelIndex = state.selectedChannelIndex
-    channels = state.channels
+    selectedVideo = state.selectedVideoIndex
+    videos = state.videos
   }
 
   func save() {
-    let state = TVState(selectedChannelIndex: selectedChannelIndex, channels: channels)
+    let state = TVState(selectedVideoIndex: selectedVideo, videos: videos)
     guard let data = try? JSONEncoder().encode(state) else { return }
     UserDefaults.standard.set(data, forKey: "tv")
   }

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AddChannelSheet: View {
+struct AddVideoSheet: View {
   @ObservedObject public var tv: TV
   @Environment(\.presentationMode)
   var presentationMode: Binding<PresentationMode>
@@ -8,7 +8,7 @@ struct AddChannelSheet: View {
   @State var name: String = ""
   @State var urlOrVideoID: String = ""
   @StateObject var videoMetadata = VideoMetadata()
-  @State var channel: Channel?
+  @State var video: Video?
   
   var body: some View {
     NavigationView {
@@ -16,7 +16,7 @@ struct AddChannelSheet: View {
         Section(header: Text("Name")) {
           TextField("Short name of video", text:$name)
             .onReceive(name.publisher) {_ in
-              updateChannel()
+              updateVideo()
             }
         }
         Section(header: Text("Video ID")) {
@@ -26,12 +26,12 @@ struct AddChannelSheet: View {
             }
         }
         .onReceive(videoMetadata.objectWillChange) {_ in
-          updateChannel()
+          updateVideo()
         }
 
         Section(header: Text("Preview")) {
-          if let channel = channel {
-            VideoMetadataView(videoMetadata: videoMetadata, channel: channel)
+          if let video = video {
+            VideoMetadataView(videoMetadata: videoMetadata, video: video)
           }
         }
       }
@@ -47,8 +47,8 @@ struct AddChannelSheet: View {
   @ViewBuilder
   private var saveButton : some View {
     Button("Save"){
-      if let channel = channel {
-        tv.channels.append(channel)
+      if let video = video {
+        tv.videos.append(video)
         self.presentationMode.wrappedValue.dismiss()
       }
     }
@@ -62,11 +62,11 @@ struct AddChannelSheet: View {
     }
   }
   
-  private func updateChannel() {
+  private func updateVideo() {
     if let videoID = videoMetadata.videoID {
-      channel = Channel(name: name, id: videoID)
+      video = Video(name: name, id: videoID)
     } else {
-      channel = nil
+      video = nil
     }
   }
 }
