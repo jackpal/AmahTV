@@ -22,7 +22,7 @@ struct EditVideo: View {
         }
       }
     }
-    .navigationBarTitle("Video properties")
+    .navigationBarTitle("Edit video")
     .navigationBarTitleDisplayMode(.inline)
     .onAppear {
       videoMetadata.resolve(urlOrVideoID: urlOrVideoID)

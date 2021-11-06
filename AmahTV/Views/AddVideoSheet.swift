@@ -4,12 +4,12 @@ struct AddVideoSheet: View {
   @ObservedObject public var tv: TV
   @Environment(\.presentationMode)
   var presentationMode: Binding<PresentationMode>
-  
+
   @State var name: String = ""
   @State var urlOrVideoID: String = ""
   @StateObject var videoMetadata = VideoMetadata()
   @State var video: Video?
-  
+
   var body: some View {
     NavigationView {
       Form {
@@ -36,7 +36,7 @@ struct AddVideoSheet: View {
         }
       }
       .toolbar {
-        saveButton
+        addButton
         cancelButton
       }
       .navigationTitle("Add video")
@@ -45,8 +45,8 @@ struct AddVideoSheet: View {
   }
 
   @ViewBuilder
-  private var saveButton : some View {
-    Button("Save"){
+  private var addButton : some View {
+    Button("Add"){
       if let video = video {
         tv.videos.append(video)
         self.presentationMode.wrappedValue.dismiss()
@@ -61,7 +61,7 @@ struct AddVideoSheet: View {
       self.presentationMode.wrappedValue.dismiss()
     }
   }
-  
+
   private func updateVideo() {
     if let videoID = videoMetadata.videoID {
       video = Video(name: name, id: videoID)
