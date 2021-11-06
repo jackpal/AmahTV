@@ -9,7 +9,12 @@ struct VideoMetadataView : View {
       if let title = videoMetadata.title {
         Text(title).lineLimit(nil).textSelection(.enabled)
       }
-      YouTubeView(channel: channel)
+      if let thumbnailURL = videoMetadata.thumbnailURL,
+         let thumbnailWidth = videoMetadata.thumbnailWidth,
+         let thumbnailHeight = videoMetadata.thumbnailHeight{
+        AsyncImage(url:thumbnailURL)
+          .aspectRatio(CGFloat(thumbnailWidth)/CGFloat(thumbnailHeight), contentMode: .fit)
+      }
 
     }
   }

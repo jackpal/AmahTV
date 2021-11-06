@@ -8,7 +8,7 @@ struct ChannelList: View {
     List {
       ForEach($tv.channels) { $channel in
         NavigationLink(destination:
-                        LazyView(YouTubeView(channel:channel))) {
+                        LazyView(EditChannel(channel:$channel))) {
           Text(channel.name)
         }
       }.onDelete {
@@ -22,7 +22,7 @@ struct ChannelList: View {
         tv.save()
       }
     }
-    .navigationBarTitle("Channels", displayMode: .inline)
+    .navigationBarTitle("Videos", displayMode: .inline)
     .navigationBarItems(trailing:
                           HStack {
       EditButton()
