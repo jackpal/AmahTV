@@ -4,9 +4,16 @@ struct WatchView: View {
   @EnvironmentObject private var tv: TV
 
   var body: some View {
-    VStack(spacing:0) {
-      videoPicker
-      YouTubeView(video: tv.video)
+    switch tv.videos.count {
+    case 0:
+      Text("No videos available.")
+    case 1:
+      YouTubeView(video:tv.videos[0])
+    default:
+      VStack(spacing:0) {
+        videoPicker
+        YouTubeView(video: tv.video)
+      }
     }
   }
 
