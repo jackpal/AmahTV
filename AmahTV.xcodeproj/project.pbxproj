@@ -150,13 +150,13 @@
 			isa = PBXGroup;
 			children = (
 				369119DC272FA38700C7D08C /* AddVideoSheet.swift */,
-				3673544127376F6400EE5EBD /* VideoForm.swift */,
 				3673542B2736E54200EE5EBD /* AdvancedMainView.swift */,
 				3676583B27338EDA00EA01E6 /* ContentView.swift */,
 				36336B4D27310C3100756898 /* EditVideo.swift */,
 				36A1FF7127324A8A00821C39 /* LazyView.swift */,
 				367354292736E52500EE5EBD /* SimpleMainView.swift */,
 				369119DA272F9F3D00C7D08C /* TVSettings.swift */,
+				3673544127376F6400EE5EBD /* VideoForm.swift */,
 				3676583927338D0E00EA01E6 /* VideoList.swift */,
 				36A1FF6F273242B900821C39 /* VideoMetadataView.swift */,
 				369119CE272F340300C7D08C /* VideoPicker.swift */,

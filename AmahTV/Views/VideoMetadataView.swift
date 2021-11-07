@@ -3,7 +3,6 @@ import YouTubePlayerKit
 
 struct VideoMetadataView : View {
   @ObservedObject public var videoMetadata: VideoMetadata
-  public let video: Video
   var body: some View {
     VStack {
       if let title = videoMetadata.title {
@@ -11,9 +10,11 @@ struct VideoMetadataView : View {
       }
       if let thumbnailURL = videoMetadata.thumbnailURL,
          let thumbnailWidth = videoMetadata.thumbnailWidth,
-         let thumbnailHeight = videoMetadata.thumbnailHeight{
+         let thumbnailHeight = videoMetadata.thumbnailHeight {
         AsyncImage(url:thumbnailURL)
           .aspectRatio(CGFloat(thumbnailWidth)/CGFloat(thumbnailHeight), contentMode: .fit)
+      } else {
+        Text("No preview available.")
       }
 
     }
