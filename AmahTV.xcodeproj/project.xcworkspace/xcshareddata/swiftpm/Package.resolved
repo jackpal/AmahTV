@@ -2,12 +2,21 @@
   "object": {
     "pins": [
       {
-        "package": "YouTubePlayerKit",
-        "repositoryURL": "https://github.com/SvenTiigi/YouTubePlayerKit",
+        "package": "SwiftUIWebView",
+        "repositoryURL": "https://github.com/globulus/swiftui-webview",
         "state": {
           "branch": null,
-          "revision": "9b2c460614f442b6d01f19a087a1abcbb4af3474",
-          "version": "1.1.3"
+          "revision": "9ce557389ffabfbd1947556fcf874e0f299336b7",
+          "version": "1.0.3"
+        }
+      },
+      {
+        "package": "SwiftUIYouTubePlayer",
+        "repositoryURL": "https://github.com/globulus/swiftui-youtube-player",
+        "state": {
+          "branch": null,
+          "revision": "b2ba9b2781f2c48f32f97e401d5d56530cc1c043",
+          "version": "1.0.0"
         }
       }
     ]

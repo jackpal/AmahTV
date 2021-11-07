@@ -109,4 +109,4 @@ A: Yes, this app is compliant with the YouTube terms of service. It uses the sta
 
 # Open Source Software
 
-The SwiftUI YouTube player wrapper code comes from https://github.com/SvenTiigi/YouTubePlayerKit
+The SwiftUI YouTube player wrapper code comes from https://github.com/globulus/swiftui-youtube-player

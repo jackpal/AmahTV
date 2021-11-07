@@ -1,5 +1,4 @@
 import SwiftUI
-import YouTubePlayerKit
 
 struct VideoMetadataView : View {
   @ObservedObject public var videoMetadata: VideoMetadata

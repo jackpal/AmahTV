@@ -6,51 +6,52 @@
 //
 
 import SwiftUI
-import YouTubePlayerKit
+import SwiftUIYouTubePlayer
 
 struct YouTubeView: View {
   public var video: Video
   
-  @State private var resetCount: Int = 0
-  
-  @Environment(\.youTubePlayer) var youTubePlayer
-  
+  @State private var action = YouTubePlayerAction.idle
+  @State private var state = YouTubePlayerState.empty
+
+  private var buttonText: String {
+    switch state.status {
+    case .playing:
+      return "Pause"
+    case .unstarted,  .ended, .paused:
+      return "Play"
+    case .buffering, .queued:
+      return "Wait"
+    }
+  }
+  private var infoText: String {
+    "Q: \(state.quality)"
+  }
+
   var body: some View {
-    YouTubePlayerView(youTubePlayer)
-    .onChange(of:video) { newValue in
-      youTubePlayer.source = .url(newValue.url.absoluteString)
+    VStack {
+      HStack {
+        Button("Load") {
+          action = .loadID(video.id)
+        }
+        Button(buttonText) {
+          if state.status != .playing {
+            action = .play
+          } else {
+            action = .pause
+          }
+        }
+        Text(infoText)
+        Button("Prev") {
+          action = .previous
+        }
+        Button("Next") {
+          action = .next
+        }
+      }
+      YouTubePlayer(action: $action, state: $state)
+      Spacer()
     }
-    .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-      // Work around black-screen-after-overnight bug.
-      reloadPlayer()
-    }
-    .onAppear {
-      youTubePlayer.source = .url(video.url.absoluteString)
-      youTubePlayer.configuration = YouTubeView.configuration
-    }
-  }
-  
-  private func reloadPlayer() {
-    resetCount += 1
-    var config = YouTubeView.configuration
-    config.referrer! += "?resetCount=\(resetCount)"
-    youTubePlayer.configuration = config
-  }
-
-  static var language: String? {
-    Locale.autoupdatingCurrent.identifier
-  }
-
-  static var configuration: YouTubePlayer.Configuration {
-    YouTubePlayer.Configuration(
-      autoPlay:true,
-      captionLanguage: language,
-      showFullscreenButton: false,
-      language: language,
-      showAnnotations: false,
-      useModestBranding: true,
-      // playInline: true,
-      referrer: "https://amahtv.palevichchenindustries.com/"
-    )
   }
 }
+
