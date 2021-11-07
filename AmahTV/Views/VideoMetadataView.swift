@@ -13,10 +13,7 @@ struct VideoMetadataView : View {
          let thumbnailHeight = videoMetadata.thumbnailHeight {
         AsyncImage(url:thumbnailURL)
           .aspectRatio(CGFloat(thumbnailWidth)/CGFloat(thumbnailHeight), contentMode: .fit)
-      } else {
-        Text("No preview available.")
       }
-
     }
   }
 }
