@@ -14,30 +14,19 @@ struct YouTubeView: View {
   @State private var resetCount: Int = 0
   
   @Environment(\.youTubePlayer) var youTubePlayer
-  @State private var currentOrientation: UIDeviceOrientation = .unknown
   
   var body: some View {
-    VStack {
-      YouTubePlayerView(youTubePlayer)
-        .onChange(of:video) { newValue in
-          youTubePlayer.source = .url(newValue.url.absoluteString)
-        }
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-          // Work around black-screen-after-overnight bug.
-          reloadPlayer()
-        }
-        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-          // Work around not automatically resizing when rotating.
-          let newOrientation = UIDevice.current.orientation
-          if newOrientation != currentOrientation {
-            currentOrientation = newOrientation
-            reloadPlayer()
-          }
-        }
-        .onAppear {
-          youTubePlayer.source = .url(video.url.absoluteString)
-          youTubePlayer.configuration = YouTubeView.configuration
-        }
+    YouTubePlayerView(youTubePlayer)
+    .onChange(of:video) { newValue in
+      youTubePlayer.source = .url(newValue.url.absoluteString)
+    }
+    .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+      // Work around black-screen-after-overnight bug.
+      reloadPlayer()
+    }
+    .onAppear {
+      youTubePlayer.source = .url(video.url.absoluteString)
+      youTubePlayer.configuration = YouTubeView.configuration
     }
     .statusBar(hidden: true)
     .preferredColorScheme(.dark)
