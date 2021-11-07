@@ -44,7 +44,6 @@ extension Video {
     Video(name: "TVBS新聞 55", id: "V0WxUakDV7M"),
     Video(name: "TVBS選新聞 56", id: "hP6_jfCFxyQ"),
     Video(name: "EBC 東森財經新聞 57", id: "ABn_ccXn_jc"),
-    Video(name: "TTV台視新聞", id: "xL0ch83RAK8"),
     Video(name: "CTS華視直播頻道", id: "yUTy1U1wTwE"),
     Video(name: "寰宇新聞台", id: "bn-zNDGLgDw")
   ]
