@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		360A05BD271BF355005E8D4B /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 360A05BC271BF355005E8D4B /* YouTubePlayerKit */; };
 		360CA42D272E5B550075ADF7 /* OEmbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CA42C272E5B550075ADF7 /* OEmbed.swift */; };
 		36336B4C27310BD900756898 /* URL+videoID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36336B4B27310BD900756898 /* URL+videoID.swift */; };
 		36336B4E27310C3100756898 /* EditVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36336B4D27310C3100756898 /* EditVideo.swift */; };
@@ -21,16 +20,15 @@
 		3673544227376F6400EE5EBD /* VideoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673544127376F6400EE5EBD /* VideoForm.swift */; };
 		3676583A27338D0E00EA01E6 /* VideoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676583927338D0E00EA01E6 /* VideoList.swift */; };
 		3676583C27338EDA00EA01E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676583B27338EDA00EA01E6 /* ContentView.swift */; };
-		3676583E2734D3B900EA01E6 /* YouTubePlayerKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676583D2734D3B900EA01E6 /* YouTubePlayerKey.swift */; };
 		3679CD3D270A9EAD00EF92D5 /* AmahTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD3C270A9EAD00EF92D5 /* AmahTVApp.swift */; };
 		3679CD41270A9EAE00EF92D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3679CD40270A9EAE00EF92D5 /* Assets.xcassets */; };
 		3679CD44270A9EAE00EF92D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3679CD43270A9EAE00EF92D5 /* Preview Assets.xcassets */; };
 		3679CD53270AA81200EF92D5 /* YouTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD52270AA81200EF92D5 /* YouTubeView.swift */; };
 		3679CD55270AB1E500EF92D5 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3679CD54270AB1E500EF92D5 /* Video.swift */; };
+		367EFCA92738623E00093577 /* YouTubePlayer in Frameworks */ = {isa = PBXBuildFile; productRef = 367EFCA82738623E00093577 /* YouTubePlayer */; };
 		369119CF272F340300C7D08C /* VideoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119CE272F340300C7D08C /* VideoPicker.swift */; };
 		369119D1272F363A00C7D08C /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119D0272F363A00C7D08C /* WatchView.swift */; };
 		369119D5272F8D4700C7D08C /* TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119D4272F8D4700C7D08C /* TV.swift */; };
-		369119D9272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */; };
 		369119DB272F9F3D00C7D08C /* TVSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119DA272F9F3D00C7D08C /* TVSettings.swift */; };
 		369119DD272FA38700C7D08C /* AddVideoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369119DC272FA38700C7D08C /* AddVideoSheet.swift */; };
 		36A1FF6E2732371C00821C39 /* VideoMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1FF6D2732371C00821C39 /* VideoMetadata.swift */; };
@@ -54,7 +52,6 @@
 		3673544127376F6400EE5EBD /* VideoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoForm.swift; sourceTree = "<group>"; };
 		3676583927338D0E00EA01E6 /* VideoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoList.swift; sourceTree = "<group>"; };
 		3676583B27338EDA00EA01E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		3676583D2734D3B900EA01E6 /* YouTubePlayerKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerKey.swift; sourceTree = "<group>"; };
 		3679CD39270A9EAD00EF92D5 /* AmahTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmahTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3679CD3C270A9EAD00EF92D5 /* AmahTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmahTVApp.swift; sourceTree = "<group>"; };
 		3679CD40270A9EAE00EF92D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,7 +62,6 @@
 		369119CE272F340300C7D08C /* VideoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPicker.swift; sourceTree = "<group>"; };
 		369119D0272F363A00C7D08C /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 		369119D4272F8D4700C7D08C /* TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TV.swift; sourceTree = "<group>"; };
-		369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YouTubePlayer+CustomStringConvertable.swift"; sourceTree = "<group>"; };
 		369119DA272F9F3D00C7D08C /* TVSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSettings.swift; sourceTree = "<group>"; };
 		369119DC272FA38700C7D08C /* AddVideoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVideoSheet.swift; sourceTree = "<group>"; };
 		36A1FF6D2732371C00821C39 /* VideoMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMetadata.swift; sourceTree = "<group>"; };
@@ -79,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				360A05BD271BF355005E8D4B /* YouTubePlayerKit in Frameworks */,
+				367EFCA92738623E00093577 /* YouTubePlayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,8 +157,6 @@
 				36A1FF6F273242B900821C39 /* VideoMetadataView.swift */,
 				369119CE272F340300C7D08C /* VideoPicker.swift */,
 				369119D0272F363A00C7D08C /* WatchView.swift */,
-				369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */,
-				3676583D2734D3B900EA01E6 /* YouTubePlayerKey.swift */,
 				3679CD52270AA81200EF92D5 /* YouTubeView.swift */,
 			);
 			path = Views;
@@ -196,7 +190,7 @@
 			);
 			name = AmahTV;
 			packageProductDependencies = (
-				360A05BC271BF355005E8D4B /* YouTubePlayerKit */,
+				367EFCA82738623E00093577 /* YouTubePlayer */,
 			);
 			productName = AmahTV;
 			productReference = 3679CD39270A9EAD00EF92D5 /* AmahTV.app */;
@@ -228,7 +222,7 @@
 			);
 			mainGroup = 3679CD30270A9EAC00EF92D5;
 			packageReferences = (
-				360A05BB271BF355005E8D4B /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+				367EFCA72738623E00093577 /* XCRemoteSwiftPackageReference "Swift-YouTube-Player" */,
 			);
 			productRefGroup = 3679CD3A270A9EAD00EF92D5 /* Products */;
 			projectDirPath = "";
@@ -271,14 +265,12 @@
 				369119D1272F363A00C7D08C /* WatchView.swift in Sources */,
 				3676583C27338EDA00EA01E6 /* ContentView.swift in Sources */,
 				369119D5272F8D4700C7D08C /* TV.swift in Sources */,
-				369119D9272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift in Sources */,
 				36A1FF6E2732371C00821C39 /* VideoMetadata.swift in Sources */,
 				3679CD3D270A9EAD00EF92D5 /* AmahTVApp.swift in Sources */,
 				36336B4C27310BD900756898 /* URL+videoID.swift in Sources */,
 				3673542C2736E54200EE5EBD /* AdvancedMainView.swift in Sources */,
 				3676583A27338D0E00EA01E6 /* VideoList.swift in Sources */,
 				36336B4E27310C3100756898 /* EditVideo.swift in Sources */,
-				3676583E2734D3B900EA01E6 /* YouTubePlayerKey.swift in Sources */,
 				36A1FF742732533C00821C39 /* URL+promoteToHTTPS.swift in Sources */,
 				3673544227376F6400EE5EBD /* VideoForm.swift in Sources */,
 				360CA42D272E5B550075ADF7 /* OEmbed.swift in Sources */,
@@ -513,21 +505,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		360A05BB271BF355005E8D4B /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+		367EFCA72738623E00093577 /* XCRemoteSwiftPackageReference "Swift-YouTube-Player" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit";
+			repositoryURL = "https://github.com/jackpal/Swift-YouTube-Player";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 0.7.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		360A05BC271BF355005E8D4B /* YouTubePlayerKit */ = {
+		367EFCA82738623E00093577 /* YouTubePlayer */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 360A05BB271BF355005E8D4B /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
-			productName = YouTubePlayerKit;
+			package = 367EFCA72738623E00093577 /* XCRemoteSwiftPackageReference "Swift-YouTube-Player" */;
+			productName = YouTubePlayer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

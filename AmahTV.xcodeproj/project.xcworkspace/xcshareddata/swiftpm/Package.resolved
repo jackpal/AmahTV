@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "YouTubePlayerKit",
-        "repositoryURL": "https://github.com/SvenTiigi/YouTubePlayerKit",
+        "package": "YouTubePlayer",
+        "repositoryURL": "https://github.com/jackpal/Swift-YouTube-Player",
         "state": {
           "branch": null,
-          "revision": "9b2c460614f442b6d01f19a087a1abcbb4af3474",
-          "version": "1.1.3"
+          "revision": "f08637bf2388502a5c239ef550ac75d7f951c7b0",
+          "version": "0.7.2"
         }
       }
     ]

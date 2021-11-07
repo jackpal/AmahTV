@@ -1,56 +1,157 @@
-//
-//  YouTubeView.swift
-//  AmahTV
-//
-//  Created by Jack Palevich on 10/3/21.
-//
+// From https://gist.github.com/Pobe16/a1d7d035371de87a74340fad692a8881
 
 import SwiftUI
-import YouTubePlayerKit
+import UIKit
+import YouTubePlayer
 
-struct YouTubeView: View {
-  public var video: Video
-  
-  @State private var resetCount: Int = 0
-  
-  @Environment(\.youTubePlayer) var youTubePlayer
-  
-  var body: some View {
-    YouTubePlayerView(youTubePlayer)
-    .onChange(of:video) { newValue in
-      youTubePlayer.source = .url(newValue.url.absoluteString)
-    }
-    .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-      // Work around black-screen-after-overnight bug.
-      reloadPlayer()
-    }
-    .onAppear {
-      youTubePlayer.source = .url(video.url.absoluteString)
-      youTubePlayer.configuration = YouTubeView.configuration
-    }
-  }
-  
-  private func reloadPlayer() {
-    resetCount += 1
-    var config = YouTubeView.configuration
-    config.referrer! += "?resetCount=\(resetCount)"
-    youTubePlayer.configuration = config
-  }
+enum playerCommandToExecute {
+    case loadNewVideo
+    case play
+    case pause
+    case forward
+    case backward
+    case stop
+    case idle
+}
 
-  static var language: String? {
-    Locale.autoupdatingCurrent.identifier
-  }
+class YouTubeControlState: ObservableObject {
 
-  static var configuration: YouTubePlayer.Configuration {
-    YouTubePlayer.Configuration(
-      autoPlay:true,
-      captionLanguage: language,
-      showFullscreenButton: false,
-      language: language,
-      showAnnotations: false,
-      useModestBranding: true,
-      // playInline: true,
-      referrer: "https://amahtv.palevichchenindustries.com/"
-    )
-  }
+    @Published var videoID: String? // = "qRC4Vk6kisY"
+    {
+        didSet {
+            self.executeCommand = .loadNewVideo
+        }
+    }
+
+    @Published var videoState: playerCommandToExecute = .loadNewVideo
+
+    @Published var executeCommand: playerCommandToExecute = .idle
+
+    func playPauseButtonTapped() {
+        if videoState == .play {
+            pauseVideo()
+        } else if videoState == .pause {
+            playVideo()
+        } else {
+            print("Unknown player state, attempting playing")
+            playVideo()
+        }
+    }
+
+    func playVideo() {
+        executeCommand = .play
+    }
+
+    func pauseVideo() {
+        executeCommand = .pause
+    }
+
+    func forward() {
+        executeCommand = .forward
+    }
+
+    func backward() {
+        executeCommand = .backward
+    }
+}
+
+final class YouTubeView: UIViewRepresentable {
+
+    typealias UIViewType = YouTubePlayerView
+
+    @ObservedObject var playerState: YouTubeControlState
+
+    init(playerState: YouTubeControlState) {
+        self.playerState = playerState
+    }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(playerState: playerState)
+    }
+
+    func makeUIView(context: Context) -> UIViewType {
+        let playerVars = [
+            "controls": "1",
+            "playsinline": "0",
+            "autohide": "0",
+            "autoplay": "0",
+            "fs": "1",
+            "rel": "0",
+            "loop": "0",
+            "enablejsapi": "1",
+            "modestbranding": "1"
+        ]
+
+        let ytVideo = YouTubePlayerView()
+
+        ytVideo.playerVars = playerVars as YouTubePlayerView.YouTubePlayerParameters
+        ytVideo.delegate = context.coordinator
+
+        return ytVideo
+    }
+
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+
+        guard let videoID = playerState.videoID else { return }
+
+        if !(playerState.executeCommand == .idle) && uiView.ready {
+            switch playerState.executeCommand {
+            case .loadNewVideo:
+                playerState.executeCommand = .idle
+                uiView.loadVideoID(videoID)
+            case .play:
+                playerState.executeCommand = .idle
+                uiView.play()
+            case .pause:
+                playerState.executeCommand = .idle
+                uiView.pause()
+            case .forward:
+            playerState.executeCommand = .idle
+                uiView.getCurrentTime { (time) in
+                    guard let time = time else {return}
+                    uiView.seekTo(Float(time) + 10, seekAhead: true)
+                }
+            case .backward:
+                playerState.executeCommand = .idle
+                uiView.getCurrentTime { (time) in
+                    guard let time = time else {return}
+                    uiView.seekTo(Float(time) - 10, seekAhead: true)
+                }
+            default:
+                playerState.executeCommand = .idle
+                print("\(playerState.executeCommand) not yet implemented")
+            }
+        } else if !uiView.ready {
+            uiView.loadVideoID(videoID)
+        }
+
+    }
+
+    class Coordinator: YouTubePlayerDelegate {
+        @ObservedObject var playerState: YouTubeControlState
+
+        init(playerState: YouTubeControlState) {
+            self.playerState = playerState
+        }
+
+        func playerReady(_ videoPlayer: YouTubePlayerView) {
+            videoPlayer.play()
+            playerState.videoState = .play
+        }
+
+        func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
+
+            switch playerState {
+            case .Playing:
+                self.playerState.videoState = .play
+            case .Paused, .Buffering, .Unstarted:
+                self.playerState.videoState = .pause
+            case .Ended:
+                self.playerState.videoState = .stop
+                // self.playerState.videoID = loadNextVideo()
+            default:
+                print("\(playerState) not implemented")
+            }
+        }
+    }
 }
