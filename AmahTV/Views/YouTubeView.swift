@@ -40,13 +40,17 @@ struct YouTubeView: View {
     config.referrer! += "?resetCount=\(resetCount)"
     youTubePlayer.configuration = config
   }
+
+  static var language: String? {
+    Locale.autoupdatingCurrent.identifier
+  }
   
   static var configuration: YouTubePlayer.Configuration {
     YouTubePlayer.Configuration(
       autoPlay:true,
-      captionLanguage: "zh-Hant",
+      captionLanguage: language,
       showFullscreenButton: false,
-      language: "zh-Hant",
+      language: language,
       showAnnotations: false,
       useModestBranding: true,
       // playInline: true,
