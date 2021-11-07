@@ -11,10 +11,7 @@ struct AddVideoSheet: View {
   var body: some View {
     NavigationView {
       VideoForm(video:$video)
-      .toolbar {
-        addButton
-        cancelButton
-      }
+      .navigationBarItems(trailing: addButton)
       .navigationTitle("Add video")
     }
     .navigationViewStyle(.stack)
@@ -27,13 +24,6 @@ struct AddVideoSheet: View {
       self.presentationMode.wrappedValue.dismiss()
     }
     .disabled(video.name.isEmpty || video.id.isEmpty)
-  }
-
-  @ViewBuilder
-  private var cancelButton: some View {
-    Button("Cancel"){
-      self.presentationMode.wrappedValue.dismiss()
-    }
   }
 
 }
