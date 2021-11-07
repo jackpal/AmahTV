@@ -39,8 +39,6 @@ To add a video, tap on the [+] icon in the upper left corner. This displays an "
 
 + "Add" is a button that will add the new video to the list of videos. The Add button will be greyed out until you have entered a name and a link.
 
-+ "Cancel" is a button that will dismiss the "Add video" sheet without adding a video.
-
 + "Name" is a text field for the name of the video. The name can be anything you like. Keep the name short. Short names are easier to read in the user interface.
 
 + "YouTube link or video ID" is a text field for the "link" or "video ID" of the YouTube video. You can paste or type the desired link or Video ID of the channel here.
@@ -92,9 +90,14 @@ Q: How can I find YouTube videos to watch?
 
 A: Use the regular YouTube app or the youtube.com web site to search for interesting videos. When you find a video you like, copy the link. Then use the Settings tab to edit the list of videos. You can paste the link into the "YouTube Link or Video ID" text field of the "Add video" and/or "Edit video" forms.
 
-Q: How can I prevent "ads" from being shown?
+Q: How can I log into my YouTube account?
+
+A: The Amah TV app does not currently allow logging in to a YouTube account.
+
+Q: How can I prevent ads from being shown?
 
 A: Ads are a part of the YouTube embedded player, and cannot be disabled.
+
 
 Q: How can I prevent "recommendations" from being shown at the end of videos?
 
