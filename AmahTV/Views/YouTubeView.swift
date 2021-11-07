@@ -28,8 +28,6 @@ struct YouTubeView: View {
       youTubePlayer.source = .url(video.url.absoluteString)
       youTubePlayer.configuration = YouTubeView.configuration
     }
-    .statusBar(hidden: true)
-    .preferredColorScheme(.dark)
   }
   
   private func reloadPlayer() {
