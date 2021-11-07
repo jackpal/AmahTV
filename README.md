@@ -90,9 +90,9 @@ Q: How can I find YouTube videos to watch?
 
 A: Use the regular YouTube app or the youtube.com web site to search for interesting videos. When you find a video you like, copy the link. Then use the Settings tab to edit the list of videos. You can paste the link into the "YouTube Link or Video ID" text field of the "Add video" and/or "Edit video" forms.
 
-Q: How can I log into my YouTube account?
+Q: How can I sign in to my YouTube account?
 
-A: The Amah TV app does not currently allow logging in to a YouTube account.
+A: The Amah TV app does not currently allow signing in to a YouTube account.
 
 Q: How can I prevent ads from being shown?
 
