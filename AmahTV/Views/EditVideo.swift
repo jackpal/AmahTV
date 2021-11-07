@@ -11,13 +11,13 @@ struct EditVideo: View {
   var body: some View {
     VStack {
       Form {
-        Section(header: Text("Name")) {
-          TextField("Name", text: $video.name)
+        Section(header: Text(VideoForm.nameLabel)) {
+          TextField(VideoForm.namePrompt, text: $video.name)
         }
-        Section(header: Text("YouTube Link or Video ID")) {
-          TextField("YouTube Link or video ID", text: $urlOrVideoID)
+        Section(header: Text(VideoForm.videoIDLabel)) {
+          TextField(VideoForm.videoIDPrompt, text: $urlOrVideoID)
         }
-        Section(header: Text("Preview")) {
+        Section(header: Text(VideoForm.previewLabel)) {
           VideoMetadataView(videoMetadata: videoMetadata, video:video)
         }
       }

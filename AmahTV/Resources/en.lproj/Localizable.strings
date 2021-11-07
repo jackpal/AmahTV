@@ -1,0 +1,5 @@
+"name-label" = "Name";
+"name-prompt" = "Short name of video";
+"videoID-label" = "Video ID";
+"videoID-prompt" = "YouTube Link or Video ID";
+"preview-label" = "Preview";

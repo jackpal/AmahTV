@@ -17,6 +17,8 @@
 		3673542C2736E54200EE5EBD /* AdvancedMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673542B2736E54200EE5EBD /* AdvancedMainView.swift */; };
 		367354312737312700EE5EBD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3673542F2737312700EE5EBD /* LICENSE */; };
 		367354322737312700EE5EBD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 367354302737312700EE5EBD /* README.md */; };
+		3673543D27376F2800EE5EBD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3673543F27376F2800EE5EBD /* Localizable.strings */; };
+		3673544227376F6400EE5EBD /* VideoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673544127376F6400EE5EBD /* VideoForm.swift */; };
 		3676583A27338D0E00EA01E6 /* VideoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676583927338D0E00EA01E6 /* VideoList.swift */; };
 		3676583C27338EDA00EA01E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676583B27338EDA00EA01E6 /* ContentView.swift */; };
 		3676583E2734D3B900EA01E6 /* YouTubePlayerKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676583D2734D3B900EA01E6 /* YouTubePlayerKey.swift */; };
@@ -47,6 +49,9 @@
 		3673542B2736E54200EE5EBD /* AdvancedMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedMainView.swift; sourceTree = "<group>"; };
 		3673542F2737312700EE5EBD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		367354302737312700EE5EBD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3673543E27376F2800EE5EBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3673544027376F3A00EE5EBD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3673544127376F6400EE5EBD /* VideoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoForm.swift; sourceTree = "<group>"; };
 		3676583927338D0E00EA01E6 /* VideoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoList.swift; sourceTree = "<group>"; };
 		3676583B27338EDA00EA01E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3676583D2734D3B900EA01E6 /* YouTubePlayerKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerKey.swift; sourceTree = "<group>"; };
@@ -96,6 +101,7 @@
 			children = (
 				3679CD40270A9EAE00EF92D5 /* Assets.xcassets */,
 				367354262736E07F00EE5EBD /* Settings.bundle */,
+				3673543F27376F2800EE5EBD /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -144,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				369119DC272FA38700C7D08C /* AddVideoSheet.swift */,
+				3673544127376F6400EE5EBD /* VideoForm.swift */,
 				3673542B2736E54200EE5EBD /* AdvancedMainView.swift */,
 				3676583B27338EDA00EA01E6 /* ContentView.swift */,
 				36336B4D27310C3100756898 /* EditVideo.swift */,
@@ -238,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3679CD44270A9EAE00EF92D5 /* Preview Assets.xcassets in Resources */,
+				3673543D27376F2800EE5EBD /* Localizable.strings in Resources */,
 				367354272736E07F00EE5EBD /* Settings.bundle in Resources */,
 				367354322737312700EE5EBD /* README.md in Resources */,
 				367354312737312700EE5EBD /* LICENSE in Resources */,
@@ -272,12 +280,25 @@
 				36336B4E27310C3100756898 /* EditVideo.swift in Sources */,
 				3676583E2734D3B900EA01E6 /* YouTubePlayerKey.swift in Sources */,
 				36A1FF742732533C00821C39 /* URL+promoteToHTTPS.swift in Sources */,
+				3673544227376F6400EE5EBD /* VideoForm.swift in Sources */,
 				360CA42D272E5B550075ADF7 /* OEmbed.swift in Sources */,
 				369119CF272F340300C7D08C /* VideoPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3673543F27376F2800EE5EBD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3673543E27376F2800EE5EBD /* en */,
+				3673544027376F3A00EE5EBD /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3679CD4A270A9EAE00EF92D5 /* Debug */ = {

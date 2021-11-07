@@ -13,14 +13,14 @@ struct AddVideoSheet: View {
   var body: some View {
     NavigationView {
       Form {
-        Section(header: Text("Name")) {
-          TextField("Short name of video", text:$name)
+        Section(header: Text(VideoForm.nameLabel)) {
+          TextField(VideoForm.namePrompt, text:$name)
             .onReceive(name.publisher) {_ in
               updateVideo()
             }
         }
-        Section(header: Text("Video ID")) {
-          TextField("YouTube Link or Video ID", text:$urlOrVideoID)
+        Section(header: Text(VideoForm.videoIDLabel)) {
+          TextField(VideoForm.videoIDPrompt, text:$urlOrVideoID)
             .onChange(of: urlOrVideoID) { newValue in
               videoMetadata.resolve(urlOrVideoID: urlOrVideoID)
             }
@@ -29,7 +29,7 @@ struct AddVideoSheet: View {
           updateVideo()
         }
 
-        Section(header: Text("Preview")) {
+        Section(header: Text(VideoForm.previewLabel)) {
           if let video = video {
             VideoMetadataView(videoMetadata: videoMetadata, video: video)
           }
