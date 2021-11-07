@@ -29,6 +29,7 @@ struct VideoForm : View {
       }
       Section(header: Text("preview-label")) {
         VideoMetadataView(videoMetadata: videoMetadata)
+        .frame(maxWidth: .infinity)
       }
     }
   }

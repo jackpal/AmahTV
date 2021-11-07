@@ -6,7 +6,10 @@ struct VideoMetadataView : View {
   var body: some View {
     VStack {
       if let title = videoMetadata.title {
-        Text(title).lineLimit(nil).textSelection(.enabled)
+        Text(title)
+        .fixedSize(horizontal: false, vertical: true)
+        .lineLimit(nil)
+        .textSelection(.enabled)
       }
       if let thumbnailURL = videoMetadata.thumbnailURL,
          let thumbnailWidth = videoMetadata.thumbnailWidth,
