@@ -6,7 +6,7 @@ struct WatchView: View {
   var body: some View {
     switch tv.videos.count {
     case 0:
-      Text("No videos available.")
+      Text("Please use the Settings tab to add some videos.")
     case 1:
       YouTubeView(video:tv.videos[0])
     default:

@@ -34,6 +34,7 @@ extension Videos: RawRepresentable {
 /// Videos from https://www.squidtv.net/asia/taiwan/
 
 extension Video {
+#if DEBUG
   static let videos = [
     Video(name: "中視新聞", id: "TCnaIE_SAtM"),
     Video(name: "EBC 東森新聞 51", id: "R2iMq5LKXco"),
@@ -47,4 +48,7 @@ extension Video {
     Video(name: "CTS華視直播頻道", id: "yUTy1U1wTwE"),
     Video(name: "寰宇新聞台", id: "bn-zNDGLgDw")
   ]
+#else
+  static let videos = Videos()
+#endif
 }
