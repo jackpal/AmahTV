@@ -7,8 +7,8 @@ Amah TV is easy-to-use iOS application for playing a pre-configured list of YouT
 
 The app has two tabs:
 
-+ TV - used to watch the videos.
-+ Settings - used to set up a list of videos.
++ TV : used to watch the videos.
++ Settings : used to set up a list of videos.
 
 
 ## TV tab
@@ -87,7 +87,6 @@ A: The Amah TV app does not currently allow signing in to a YouTube account.
 Q: How can I prevent ads from being shown?
 
 A: Ads are a part of the YouTube embedded player, and cannot be disabled.
-
 
 Q: How can I prevent "recommendations" from being shown at the end of videos?
 
