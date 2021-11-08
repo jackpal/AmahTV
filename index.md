@@ -96,6 +96,12 @@ Q: Is this app compliant with the YouTube Terms of Service?
 
 A: Yes, this app is compliant with the YouTube terms of service. It uses the standard YouTube embedded video player in a WebView.
 
-# Open Source Software
+# Appendix
+
+## Privacy policy
+
+AmahTV has a [privacy policy](/AmahTV/privacy-policy.md)
+
+## Open Source Software
 
 The application source code is available at [https://github.com/jackpal/AmahTV](https://github.com/jackpal/AmahTV).
