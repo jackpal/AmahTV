@@ -100,7 +100,7 @@ A: Yes, this app is compliant with the YouTube terms of service. It uses the sta
 
 ## Privacy policy
 
-AmahTV has a [privacy policy](/AmahTV/privacy-policy.md)
+AmahTV has a [privacy policy](/AmahTV/privacy-policy)
 
 ## Open Source Software
 
