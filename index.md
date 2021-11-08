@@ -1,13 +1,16 @@
 Amah TV is easy-to-use iOS application for playing a pre-configured list of YouTube videos.
 
-+ By default, this app shows a list of live Taiwan TV channels.
-+ The list of videos can be edited to substitute your own list of videos.
+You can:
+
++ Use the Settings tab to create and edit a list of embeddable YouTube videos.
++ Use the TV tab to watch videos from the list you created.
++ Optionally hide the Settings tab to simplify the user interface.
 
 # User interface
 
 The app has two tabs:
 
-+ TV : used to watch the videos.
++ TV : used to watch videos from the list of videos.
 + Settings : used to set up a list of videos.
 
 
