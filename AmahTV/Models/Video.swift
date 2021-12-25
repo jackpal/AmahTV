@@ -36,17 +36,14 @@ extension Videos: RawRepresentable {
 extension Video {
 #if DEBUG
   static let videos = [
-    Video(name: "中視新聞", id: "TCnaIE_SAtM"),
-    Video(name: "EBC 東森新聞 51", id: "R2iMq5LKXco"),
-    Video(name: "民視新聞 53", id: "XxJKnDLYZz4"),
-    Video(name: "三立 LIVE 新聞直播", id: "CKjSm5ZeehE"),
-    Video(name: "東森財經", id: "zNESDscyCmk"),
-    Video(name: "中天新聞24小時", id: "lu_BJKxqGnk"),
-    Video(name: "TVBS新聞 55", id: "V0WxUakDV7M"),
-    Video(name: "TVBS選新聞 56", id: "hP6_jfCFxyQ"),
-    Video(name: "EBC 東森財經新聞 57", id: "ABn_ccXn_jc"),
-    Video(name: "CTS華視直播頻道", id: "yUTy1U1wTwE"),
-    Video(name: "寰宇新聞台", id: "bn-zNDGLgDw")
+    Video(name: "FTV", id: "XGEmg3vhrzU"),
+    Video(name: "CTS News", id: "wM0g8EoUZ_E"),
+    Video(name: "SET News", id: "FoBfXvlOR6I"),
+    Video(name: "CTV News Channel", id: "TCnaIE_SAtM"),
+    Video(name: "CTi News", id: "lu_BJKxqGnk"),
+    Video(name: "Global News", id: "Fpsi2cmXGMs"),
+    Video(name: "SJTV", id: "VD8dVG1DF1s"),
+    Video(name: "SDTV 1", id: "bmtU_o1Mf9E"),
   ]
 #else
   static let videos = Videos()
