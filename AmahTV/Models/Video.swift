@@ -43,8 +43,6 @@ extension Video {
     Video(name: "CTV News Channel", id: "TCnaIE_SAtM"),
     Video(name: "CTi News", id: "lu_BJKxqGnk"),
     Video(name: "Global News", id: "Fpsi2cmXGMs"),
-    // Japanese
-    Video(name: "Pokémon Kids TV", id: "HHIj221nbco"), // Edutainment
   ]
 #else
   static let videos = Videos()
