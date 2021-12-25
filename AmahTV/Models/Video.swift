@@ -36,14 +36,15 @@ extension Videos: RawRepresentable {
 extension Video {
 #if DEBUG
   static let videos = [
+    // Taiwan
     Video(name: "FTV", id: "XGEmg3vhrzU"),
     Video(name: "CTS News", id: "wM0g8EoUZ_E"),
     Video(name: "SET News", id: "FoBfXvlOR6I"),
     Video(name: "CTV News Channel", id: "TCnaIE_SAtM"),
     Video(name: "CTi News", id: "lu_BJKxqGnk"),
     Video(name: "Global News", id: "Fpsi2cmXGMs"),
-    Video(name: "SJTV", id: "VD8dVG1DF1s"),
-    Video(name: "SDTV 1", id: "bmtU_o1Mf9E"),
+    // Japanese
+    Video(name: "Pokémon Kids TV", id: "HHIj221nbco"), // Edutainment
   ]
 #else
   static let videos = Videos()
