@@ -37,12 +37,13 @@ extension Video {
 #if DEBUG
   static let videos = [
     // Taiwan
-    Video(name: "FTV", id: "XGEmg3vhrzU"),
+    Video(name: "FTV", id: "yguQ1SzPM5U"),
     Video(name: "CTS News", id: "wM0g8EoUZ_E"),
     Video(name: "SET News", id: "FoBfXvlOR6I"),
     Video(name: "CTV News Channel", id: "TCnaIE_SAtM"),
     Video(name: "CTi News", id: "lu_BJKxqGnk"),
-    Video(name: "Global News", id: "Fpsi2cmXGMs"),
+    Video(name: "Global News", id: "B7Zp3d6xXWw"),
+    Video(name: "FTV Dramas", id: "-l18QppNSN0"),
   ]
 #else
   static let videos = Videos()
