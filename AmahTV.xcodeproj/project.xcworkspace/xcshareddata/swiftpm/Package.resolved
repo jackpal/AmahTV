@@ -1,16 +1,14 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "YouTubePlayerKit",
-        "repositoryURL": "https://github.com/SvenTiigi/YouTubePlayerKit",
-        "state": {
-          "branch": null,
-          "revision": "12b2dfd368e0407f07407527ad24ecd9a238e2b1",
-          "version": "1.1.4"
-        }
+  "pins" : [
+    {
+      "identity" : "youtubeplayerkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SvenTiigi/YouTubePlayerKit",
+      "state" : {
+        "revision" : "fa70945f48780b2f78102c5905b6a65b2531b618",
+        "version" : "1.1.12"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 2
 }
