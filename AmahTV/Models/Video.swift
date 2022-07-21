@@ -41,8 +41,8 @@ extension Video {
     Video(name: "CTS News", id: "wM0g8EoUZ_E"),
     Video(name: "SET News", id: "FoBfXvlOR6I"),
     Video(name: "CTV News Channel", id: "TCnaIE_SAtM"),
-    Video(name: "CTi News", id: "lu_BJKxqGnk"),
-    Video(name: "Global News", id: "B7Zp3d6xXWw"),
+    Video(name: "CTi News", id: "6X6UMtUJ_IM"),
+    Video(name: "Global News", id: "EmhrRBJ1u9Q"),
     Video(name: "FTV Dramas", id: "-l18QppNSN0"),
   ]
 #else
