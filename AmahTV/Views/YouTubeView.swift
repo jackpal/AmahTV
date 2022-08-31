@@ -43,6 +43,11 @@ struct YouTubeView: View {
 
   static var configuration: YouTubePlayer.Configuration {
     YouTubePlayer.Configuration(
+      automaticallyAdjustsContentInsets: true,
+      allowsPictureInPictureMediaPlayback: false,
+      openURLAction: .init(){ url in
+        print("Not opening URL", url)
+      },
       autoPlay:true,
       captionLanguage: language,
       showFullscreenButton: false,
@@ -50,7 +55,7 @@ struct YouTubeView: View {
       showAnnotations: false,
       useModestBranding: true,
       // playInline: true,
-      referrer: "https://amahtv.palevichchenindustries.com/"
-    )
+      showRelatedVideos: false,
+      referrer: "https://amahtv.palevichchenindustries.com/"    )
   }
 }
