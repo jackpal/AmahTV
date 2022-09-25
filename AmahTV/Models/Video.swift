@@ -37,14 +37,14 @@ extension Video {
 #if DEBUG
   static let videos = [
     // Taiwan
-    Video(name: "FTV", id: "P8DRJChuQQQ"),
+    Video(name: "FTV", id: "sPb44HnI2Sk"),
     Video(name: "CTS", id: "wM0g8EoUZ_E"), // Sometimes offline.
     Video(name: "SET", id: "TnJj78OtaJU"),
     Video(name: "CTV", id: "TCnaIE_SAtM"),
     // Video(name: "TTV 1", id: "xL0ch83RAK8"), // Blocked from embedded.
     Video(name: "TTV", id: "xvtQ7Gz_sB4"),
     Video(name: "CTi News", id: "sINegxnHcQk"),
-    Video(name: "Global News", id: "HXcm22-69Og"),
+    Video(name: "Global News", id: "qFhAXrviP5g"),
     Video(name: "FTV D 1", id: "bn7glmBPmIQ"),
     Video(name: "FTV D 2", id: "1kzVPwTeKds"),
     Video(name: "FTV D 3", id: "298QROP4xe0"),
