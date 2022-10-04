@@ -72,6 +72,7 @@
 		36A1FF6F273242B900821C39 /* VideoMetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMetadataView.swift; sourceTree = "<group>"; };
 		36A1FF7127324A8A00821C39 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		36A1FF732732533C00821C39 /* URL+promoteToHTTPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+promoteToHTTPS.swift"; sourceTree = "<group>"; };
+		36BF35BE28EC050C00B067C7 /* YouTubePlayerKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = YouTubePlayerKit; path = ../YouTubePlayerKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +110,7 @@
 		3679CD30270A9EAC00EF92D5 = {
 			isa = PBXGroup;
 			children = (
+				36BF35BE28EC050C00B067C7 /* YouTubePlayerKit */,
 				3673542F2737312700EE5EBD /* LICENSE */,
 				367354302737312700EE5EBD /* README.md */,
 				3679CD3B270A9EAD00EF92D5 /* AmahTV */,

@@ -19,6 +19,9 @@ struct YouTubeView: View {
     YouTubePlayerView(youTubePlayer)
     .onChange(of:video) { newValue in
       youTubePlayer.source = .url(newValue.url.absoluteString)
+      var config = youTubePlayer.configuration
+      config.referrer = newValue.referrer
+      youTubePlayer.update(configuration:config)
     }
     .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
       // Work around black-screen-after-overnight bug.
@@ -55,7 +58,6 @@ struct YouTubeView: View {
       showAnnotations: false,
       useModestBranding: true,
       // playInline: true,
-      showRelatedVideos: false,
-      referrer: "https://amahtv.palevichchenindustries.com/"    )
+      showRelatedVideos: false   )
   }
 }

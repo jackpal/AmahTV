@@ -2,11 +2,12 @@ import Foundation
 
 struct Video : Equatable, Hashable, Identifiable, Codable {
   var name: String
+  var id: String
+  var referrer: String?
+
   var url: URL {
     URL(string:"https://www.youtube.com/watch?v=\(id)")!
   }
-
-  var id: String
 }
 
 typealias Videos = [Video]
@@ -37,13 +38,13 @@ extension Video {
 #if DEBUG
   static let videos = [
     // Taiwan
-    Video(name: "FTV", id: "sPb44HnI2Sk"),
-    Video(name: "CTS", id: "wM0g8EoUZ_E"), // Sometimes offline.
-    Video(name: "SET", id: "TnJj78OtaJU"),
+    Video(name: "FTV", id: "ylYJSBUgaMA"),
+    Video(name: "CTS", id: "uD_BrkpIGu0"), // Sometimes offline.
+    Video(name: "SET", id: "EB4g7wecgTI"),
     Video(name: "CTV", id: "TCnaIE_SAtM"),
-    // Video(name: "TTV 1", id: "xL0ch83RAK8"), // Blocked from embedded.
-    Video(name: "TTV", id: "xvtQ7Gz_sB4"),
-    Video(name: "CTi News", id: "sINegxnHcQk"),
+    Video(name: "TTV 1", id: "xL0ch83RAK8", referrer: "https://news.ttv.com.tw"), // Blocked from embedded, hard-code.
+    // Video(name: "TTV", id: "wDYmSOo7pRM", referrer: "https://news.ttv.com.tw"), // This is a non-live channe.
+    // Video(name: "CTi News", id: "kZKxmh-rY24"), Not live
     Video(name: "Global News", id: "qFhAXrviP5g"),
     Video(name: "FTV D 1", id: "bn7glmBPmIQ"),
     Video(name: "FTV D 2", id: "1kzVPwTeKds"),
