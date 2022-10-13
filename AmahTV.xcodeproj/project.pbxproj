@@ -10,6 +10,8 @@
 		360CA42D272E5B550075ADF7 /* OEmbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CA42C272E5B550075ADF7 /* OEmbed.swift */; };
 		36336B4C27310BD900756898 /* URL+videoID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36336B4B27310BD900756898 /* URL+videoID.swift */; };
 		36336B4E27310C3100756898 /* EditVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36336B4D27310C3100756898 /* EditVideo.swift */; };
+		3652F02D28F7BEAC00F1EAF9 /* NetworkStatusMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3652F02C28F7BEAC00F1EAF9 /* NetworkStatusMonitor.swift */; };
+		3652F02F28F7BF8F00F1EAF9 /* NetworkDisconnectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3652F02E28F7BF8F00F1EAF9 /* NetworkDisconnectedView.swift */; };
 		367300CF2730DF9300B311A8 /* URL+Resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367300CE2730DF9300B311A8 /* URL+Resolve.swift */; };
 		367354272736E07F00EE5EBD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 367354262736E07F00EE5EBD /* Settings.bundle */; };
 		3673542A2736E52500EE5EBD /* SimpleMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367354292736E52500EE5EBD /* SimpleMainView.swift */; };
@@ -43,6 +45,8 @@
 		360CA42C272E5B550075ADF7 /* OEmbed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEmbed.swift; sourceTree = "<group>"; };
 		36336B4B27310BD900756898 /* URL+videoID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+videoID.swift"; sourceTree = "<group>"; };
 		36336B4D27310C3100756898 /* EditVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVideo.swift; sourceTree = "<group>"; };
+		3652F02C28F7BEAC00F1EAF9 /* NetworkStatusMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusMonitor.swift; sourceTree = "<group>"; };
+		3652F02E28F7BF8F00F1EAF9 /* NetworkDisconnectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDisconnectedView.swift; sourceTree = "<group>"; };
 		367300CE2730DF9300B311A8 /* URL+Resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Resolve.swift"; sourceTree = "<group>"; };
 		367354262736E07F00EE5EBD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		367354292736E52500EE5EBD /* SimpleMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMainView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 				367300CE2730DF9300B311A8 /* URL+Resolve.swift */,
 				36336B4B27310BD900756898 /* URL+videoID.swift */,
 				36A1FF732732533C00821C39 /* URL+promoteToHTTPS.swift */,
+				3652F02C28F7BEAC00F1EAF9 /* NetworkStatusMonitor.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				369119D8272F9A3F00C7D08C /* YouTubePlayer+CustomStringConvertable.swift */,
 				3676583D2734D3B900EA01E6 /* YouTubePlayerKey.swift */,
 				3679CD52270AA81200EF92D5 /* YouTubeView.swift */,
+				3652F02E28F7BF8F00F1EAF9 /* NetworkDisconnectedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 				36A1FF6E2732371C00821C39 /* VideoMetadata.swift in Sources */,
 				3679CD3D270A9EAD00EF92D5 /* AmahTVApp.swift in Sources */,
 				36336B4C27310BD900756898 /* URL+videoID.swift in Sources */,
+				3652F02D28F7BEAC00F1EAF9 /* NetworkStatusMonitor.swift in Sources */,
 				3673542C2736E54200EE5EBD /* AdvancedMainView.swift in Sources */,
 				3676583A27338D0E00EA01E6 /* VideoList.swift in Sources */,
 				36336B4E27310C3100756898 /* EditVideo.swift in Sources */,
@@ -285,6 +292,7 @@
 				3673544227376F6400EE5EBD /* VideoForm.swift in Sources */,
 				360CA42D272E5B550075ADF7 /* OEmbed.swift in Sources */,
 				369119CF272F340300C7D08C /* VideoPicker.swift in Sources */,
+				3652F02F28F7BF8F00F1EAF9 /* NetworkDisconnectedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -414,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -441,9 +449,8 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -474,9 +481,8 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
