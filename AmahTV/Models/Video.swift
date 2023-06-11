@@ -44,9 +44,9 @@ extension Video {
     Video(name: "CTV", id: "TCnaIE_SAtM"),
     Video(name: "TTV 1", id: "xL0ch83RAK8", referrer: "https://news.ttv.com.tw"), // Blocked from embedded, hard-code.
     // Video(name: "TTV", id: "wDYmSOo7pRM", referrer: "https://news.ttv.com.tw"), // This is a non-live channe.
-    // Video(name: "CTi News", id: "kZKxmh-rY24"), Not live
-    Video(name: "Global News", id: "1baN3SZYWc0"),
-    // Not watched
+    Video(name: "CTi News", id: "xAqAZIr5izk"),
+    Video(name: "Global News", id: "V8ue1aoEOEQ"),
+    // Dramas, Not watched:
 //    Video(name: "FTV D 1", id: "bn7glmBPmIQ"),
 //    Video(name: "FTV D 2", id: "1kzVPwTeKds"),
 //    Video(name: "FTV D 3", id: "298QROP4xe0"),
