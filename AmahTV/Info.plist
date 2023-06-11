@@ -7,5 +7,7 @@
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 	</dict>
+	<key>UISupportsFullScreenInAssistiveAccess</key>
+	<true/>
 </dict>
 </plist>
