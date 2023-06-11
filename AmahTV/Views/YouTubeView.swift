@@ -17,10 +17,10 @@ struct YouTubeView: View {
   
   var body: some View {
     YouTubePlayerView(youTubePlayer)
-    .onChange(of:video) { newValue in
-      youTubePlayer.source = .url(newValue.url.absoluteString)
+    .onChange(of:video) {
+      youTubePlayer.source = .url(video.url.absoluteString)
       var config = youTubePlayer.configuration
-      config.referrer = newValue.referrer
+      config.referrer = video.referrer
       youTubePlayer.update(configuration:config)
     }
     .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in

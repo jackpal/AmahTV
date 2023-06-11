@@ -18,8 +18,8 @@ struct VideoForm : View {
       Section(header: Text("videoID-label")) {
         TextField("videoID-prompt", text: $urlOrVideoID)
       }
-      .onChange(of: urlOrVideoID) { newValue in
-        videoMetadata.resolve(urlOrVideoID: newValue)
+      .onChange(of: urlOrVideoID) {
+        videoMetadata.resolve(urlOrVideoID: urlOrVideoID)
       }
       .onReceive(videoMetadata.objectWillChange) {_ in
         video.id = videoMetadata.videoID ?? ""

@@ -39,16 +39,17 @@ extension Video {
   static let videos = [
     // Taiwan
     Video(name: "FTV", id: "ylYJSBUgaMA"),
-    Video(name: "CTS", id: "Jf2OIbmdAio"), // Sometimes offline.
+    // Video(name: "CTS", id: "Jf2OIbmdAio"), // Always offline.
     Video(name: "SET", id: "FoBfXvlOR6I"),
     Video(name: "CTV", id: "TCnaIE_SAtM"),
     Video(name: "TTV 1", id: "xL0ch83RAK8", referrer: "https://news.ttv.com.tw"), // Blocked from embedded, hard-code.
     // Video(name: "TTV", id: "wDYmSOo7pRM", referrer: "https://news.ttv.com.tw"), // This is a non-live channe.
     // Video(name: "CTi News", id: "kZKxmh-rY24"), Not live
     Video(name: "Global News", id: "1baN3SZYWc0"),
-    Video(name: "FTV D 1", id: "bn7glmBPmIQ"),
-    Video(name: "FTV D 2", id: "1kzVPwTeKds"),
-    Video(name: "FTV D 3", id: "298QROP4xe0"),
+    // Not watched
+//    Video(name: "FTV D 1", id: "bn7glmBPmIQ"),
+//    Video(name: "FTV D 2", id: "1kzVPwTeKds"),
+//    Video(name: "FTV D 3", id: "298QROP4xe0"),
   ]
 #else
   static let videos = Videos()
