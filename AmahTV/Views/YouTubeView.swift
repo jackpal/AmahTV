@@ -18,46 +18,30 @@ struct YouTubeView: View {
   var body: some View {
     YouTubePlayerView(youTubePlayer)
     .onChange(of:video) {
-      youTubePlayer.source = .url(video.url.absoluteString)
-      var config = youTubePlayer.configuration
-      config.referrer = video.referrer
-      youTubePlayer.update(configuration:config)
+        Task {
+            try? await youTubePlayer.load(source:.video(id: video.id))
+        }
     }
     .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
       // Work around black-screen-after-overnight bug.
       reloadPlayer()
     }
     .onAppear {
-      youTubePlayer.source = .url(video.url.absoluteString)
-      youTubePlayer.configuration = YouTubeView.configuration
+        Task {
+            try? await youTubePlayer.load(source:.video(id: video.id))
+        }
     }
   }
   
   private func reloadPlayer() {
-    resetCount += 1
-    var config = YouTubeView.configuration
-    config.referrer! += "?resetCount=\(resetCount)"
-    youTubePlayer.configuration = config
+//    resetCount += 1
+//    var config = YouTubeView.configuration
+//    config.referrer! += "?resetCount=\(resetCount)"
+//    youTubePlayer.configuration = config
   }
 
   static var language: String? {
     Locale.autoupdatingCurrent.identifier
   }
 
-  static var configuration: YouTubePlayer.Configuration {
-    YouTubePlayer.Configuration(
-      automaticallyAdjustsContentInsets: true,
-      allowsPictureInPictureMediaPlayback: false,
-      openURLAction: .init(){ url in
-        print("Not opening URL", url)
-      },
-      autoPlay:true,
-      captionLanguage: language,
-      showFullscreenButton: false,
-      language: language,
-      showAnnotations: false,
-      useModestBranding: true,
-      // playInline: true,
-      showRelatedVideos: false   )
-  }
 }

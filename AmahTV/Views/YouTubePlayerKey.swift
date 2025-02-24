@@ -2,7 +2,17 @@ import SwiftUI
 import YouTubePlayerKit
 
 private struct YouTubePlayerKey: EnvironmentKey {
-  static let defaultValue = YouTubePlayer()
+    static let defaultValue = YouTubePlayer(
+        parameters:.init(
+            autoPlay:true,
+            showControls:false,
+            showFullscreenButton:false,
+            restrictRelatedVideosToSameChannel:true
+        ),
+        configuration:.init(
+            allowsAirPlayForMediaPlayback: false
+        )
+    )
 }
 
 extension EnvironmentValues {
