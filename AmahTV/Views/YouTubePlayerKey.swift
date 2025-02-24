@@ -7,7 +7,9 @@ private struct YouTubePlayerKey: EnvironmentKey {
             autoPlay:true,
             showControls:false,
             showFullscreenButton:false,
-            restrictRelatedVideosToSameChannel:true
+            restrictRelatedVideosToSameChannel:true,
+            originURL: URL(string:"https://www.youtube.com")!, // Required for "Must be played from YouTube" videos.
+            // referrerURL: URL(string:"https://www.youtube.com")
         ),
         configuration:.init(
             allowsAirPlayForMediaPlayback: false
