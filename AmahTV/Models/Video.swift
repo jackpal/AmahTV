@@ -39,7 +39,6 @@ extension Video {
   static let videos = [
     Video(name: "CTV News Channel", id: "TCnaIE_SAtM"), // News
     Video(name: "FTV", id: "ylYJSBUgaMA"), // Generalist,News,Entertainment
-    Video(name: "TaiwanPlus", id: "gvV_mJsKLWQ"), // News,Information
     Video(name: "TTV", id: "xL0ch83RAK8"), // Taiwan TTV
     Video(name: "PTS News", id: "quwqlazU-c8"), // News,Current Affairs
     Video(name: "NTDAPTV", id: "GU5UsbkDQYk")
