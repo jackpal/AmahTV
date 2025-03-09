@@ -5,11 +5,11 @@ private struct YouTubePlayerKey: EnvironmentKey {
     static let defaultValue = YouTubePlayer(
         parameters:.init(
             autoPlay:true,
-            showControls:false,
+            showControls:true,
             showFullscreenButton:false,
             restrictRelatedVideosToSameChannel:true,
             originURL: URL(string:"https://www.youtube.com")!, // Required for "Must be played from YouTube" videos.
-            // referrerURL: URL(string:"https://www.youtube.com")
+            referrerURL: URL(string:"https://www.youtube.com")
         ),
         configuration:.init(
             allowsAirPlayForMediaPlayback: false

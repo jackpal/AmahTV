@@ -34,14 +34,43 @@ struct YouTubeView: View {
   }
   
   private func reloadPlayer() {
-//    resetCount += 1
-//    var config = YouTubeView.configuration
-//    config.referrer! += "?resetCount=\(resetCount)"
-//    youTubePlayer.configuration = config
+    resetCount += 1
+    if let referrerURL = youTubePlayer.parameters.referrerURL {
+      youTubePlayer.parameters.referrerURL = updateQueryParameter(in: referrerURL, parameterName: "resetCount", parameterValue: String(resetCount))
+    }
   }
 
   static var language: String? {
     Locale.autoupdatingCurrent.identifier
   }
 
+}
+
+
+private func updateQueryParameter(in url: URL, parameterName: String, parameterValue: String) -> URL? {
+    guard var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
+        print("Error: Invalid URL") // Should theoretically not happen if you have a valid URL object
+        return nil // Or throw an error if you prefer
+    }
+
+    var queryItems = urlComponents.queryItems ?? []
+
+    // Check if the parameter already exists
+    var parameterExists = false
+    for (index, item) in queryItems.enumerated() {
+        if item.name == parameterName {
+            queryItems[index].value = parameterValue // Update existing parameter
+            parameterExists = true
+            break
+        }
+    }
+
+    // If the parameter doesn't exist, add it
+    if !parameterExists {
+        queryItems.append(URLQueryItem(name: parameterName, value: parameterValue))
+    }
+
+    urlComponents.queryItems = queryItems
+
+    return urlComponents.url
 }
